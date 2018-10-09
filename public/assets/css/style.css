@@ -76,7 +76,7 @@ a, input, button {
 
 b{
 	font-family: ATTAleckSans_Bd, sans-serif;
-	color: rgba(0,0,0,.8)
+	/* color: rgba(0,0,0,.8) */
 }
 .yellow b{
 	font-family: Gloriola_Bd, sans-serif;
@@ -100,7 +100,7 @@ input{
 main{
 	height:100vh;
 	position: relative;
-	/* padding-top: 55px; */
+	padding-top: 55px;
 }
 
 section{
@@ -179,6 +179,8 @@ hr{
 .yellow .f-medium{
 	font-family: Gloriola_Md, sans-serif;
 }
+
+/* Font Color */
 .c-white{
 	color: rgb(255,255,255);
 }
@@ -188,6 +190,11 @@ hr{
 .c-black{
 	color: rgba(0,0,0,1);
 }
+.c-green{
+	color: rgb(76,169,12);
+}
+
+
 .b-white{
 	background-color: rgb(255,255,255);
 }
@@ -286,6 +293,14 @@ hr{
 	display: table;
 	width: calc(100% - 20px);
 }
+.item-row-line{
+	margin: 10px;
+	padding: 10px 3px;
+	display: table;
+	width: calc(100% - 20px);
+	border-top: 1px solid rgb(239,239,239);
+	border-bottom: 1px solid rgb(239,239,239);
+}
 .item-ico{
 	display: inline-block;
 	height: 40px;
@@ -297,8 +312,6 @@ hr{
 	display: inline-block;
 	height: 20px;
 	width: 20px;
-	background-repeat: no-repeat;
-	background-position: center;
 	vertical-align: middle;
 	transition: .3s;
 	transform: rotate(0deg);
@@ -380,6 +393,17 @@ hr{
 	display: inline-block;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+.icon{
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.icon-info{
+	height: 20px;
+	width: 20px;
+	display: block;
+	background-image: url(icon/ico_info_gray.svg);
 }
 .to-detail .item-row{
 	visibility: hidden;
@@ -486,11 +510,7 @@ hr{
 	height: 0px;
 	transition: .3s;	
 	overflow: hidden;
-	visibility: hidden;
-}
-.tabs-content > .tab-content.animation{
 	height: auto;
-	transition: .3s;
 	visibility: visible;
 }
 

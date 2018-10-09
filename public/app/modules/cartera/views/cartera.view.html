@@ -1,6 +1,6 @@
 <att-spin ng-class="{hide:spin}"></att-spin>
-<main ng-class="cartera.color" ng-class="{'to-detail': item.toDetail}">
-		<!-- <att-header h1="cartera.titulo" h2="cartera.career" ></att-header> -->
+<main ng-class="beneficios.color" ng-class="{'to-detail': item.toDetail}">
+		<att-header h1="titulo" h2="career" ></att-header>
 		
 	
 		<!-- <div class="item-row-full">
@@ -15,177 +15,61 @@
 					Hoy cuentas con:
 				</b>
 			</div>
-			<div class="wrapper-item" ng-repeat="item in cartera.grupos" ng-class="{'to-detail': item.toDetail}" id="iditem{{$index}}">
-				<div class="item-row" ng-click="showDetail(item, 'iditem' + $index)">
+			<div class="wrapper-item" ng-repeat="grupo in beneficios.grupos" ng-class="{'to-detail': grupo.toDetail}" id="iditem{{$index}}">
+				
+				<div class="item-row" ng-click="showDetail(grupo, 'iditem' + $index)">
 					<div class="item-col width-40 padding-lr-20">
-						<i class="item-ico" ng-class="item.icon"></i>
+						<i class="item-ico" ng-class="grupo.icon"></i>
 					</div>
 					<div class="item-col">
-						<span>{{item.nombre}}</span>
+						<span>{{grupo.nombre}}</span>
 					</div>
 					<div class="item-col width-114 t-center">
-						<h1><b>{{item.disponible}}</b></h1>
+						<h1><b>{{grupo.disponible}}</b></h1>
 					</div>
 					<div class="item-col width-36">
-						<i class="item-ico-arrow att-arrow-regular"></i>
+						<i class="icon item-ico-arrow att-arrow-regular"></i>
 					</div>
 				</div>
+
 				<div class="overview"></div>
 				<div class="alert-detail">
 					<hr>
 					
-					<div class="tabs" ng-class="getColums(item)">
-						<div ng-if="item.ilimitado" class="tab" ng-class="{ 'active' : item.tabs.ilimitado }" ng-click="resetTabs(item.tabs); item.tabs.ilimitado = true; ">
-							<i class="icon att-ilimitada"></i>
-							<h3>Descripción</h3>
-							<h3>Ilimitados</h3>
-						</div>
-						<div ng-if="item.limitado" class="tab"  ng-class="{ 'active' : item.tabs.limitado }" ng-click="resetTabs(item.tabs); item.tabs.limitado = true;">
-							<i class="icon att-icluida"></i>
-							<h3>Descripción</h3>
-							<h3>Incluidos</h3>
-						</div>
-						<div ng-if="item.bolsas" class="tab" ng-class="{ 'active' : item.tabs.bolsas }"  ng-click="resetTabs(item.tabs); item.tabs.bolsas = true;">
-							<i class="icon att-bolsas"></i>
-							<h3>Bolsas</h3>
-						</div>
-						<div ng-if="item.saldo" class="tab" ng-class="{ 'active' : item.tabs.saldo }"  ng-click="resetTabs(item.tabs); item.tabs.saldo = true;">
-							<i class="icon att-saldo"></i>
-							<h3>Saldo</h3>
-							<h3>Comprado</h3>
-						</div>
-						<div ng-if="item.beneficios" class="tab" ng-class="{ 'active' : item.tabs.beneficios }"  ng-click="resetTabs(item.tabs); item.tabs.beneficios = true;">
-							<i class="icon att-beneficios"></i>
-							<h3>Saldo</h3>
-							<h3>Beneficios</h3>
-						</div>
-						<div ng-if="item.monedas" class="tab" ng-class="{ 'active' : item.tabs.monedas }"  ng-click="resetTabs(item.tabs); item.tabs.monedas = true;">
-							<i class="icon att-saldo"></i>
-							<h3>Monedas</h3>
-						</div>
-				</div>
-
-					<div class="tabs-content">
-						<div ng-if="item.ilimitado" class="tab-content" ng-class="{ 'animation' : item.tabs.ilimitado }">
-							<div class="item-row-empty border-bottom-gray">
-								<div class="item-col">
-										<span> </span><br>
-									<h1><b>Ilimitados</b></h1>
-								</div>
-								<div class="item-col">
-										<span> </span><br>
-										<h1><b class="fs-36 c-gray">-</b></h1>
-								</div>
-								<div class="item-col width-114 t-center">
-									<span>Consumidos</span><br>
-									<h1><b>{{item.ilimitado.consumido}}</b></h1>
-								</div>
-							</div>
-							<div>
-								<h2>Descripción</h2>
-								<p>
-									{{item.ilimitado.descripcion}}
-								</p>
-							</div>
-						</div>
-						<div ng-if="item.limitado" class="tab-content"  ng-class="{ 'animation' : item.tabs.limitado }">
-								<div class="item-row-empty border-bottom-gray">
-									<div class="item-col width-114 t-center">
-										<span>Incluidos</span><br>
-										<h1><b>{{item.limitado.incluido}}</b></h1>
-									</div>
-									<div class="item-col">
-											<span> </span><br>
-											<h1><b class="fs-36 c-gray">-</b></h1>
-									</div>
-									<div class="item-col width-114 t-center">
-										<span>Consumidos</span><br>
-										<h1><b>{{item.limitado.consumido}}</b></h1>
-									</div>
-									<div class="item-col">
-											<span> </span><br>
-											<h1><b class="fs-36 c-gray">=</b></h1>
-									</div>
-									<div class="item-col width-114 t-center">
-										<span>Disponible</span><br>
-										<h1><b>{{item.limitado.disponible}}</b></h1>
-									</div>
-								</div>
-								<div>
-									<h2>Descripción</h2>
-									<p>
-										{{item.ilimitado.descripcion}}
-									</p>
-								</div>
-						</div>
-						<div ng-if="item.bolsas" class="tab-content" ng-class="{ 'animation' : item.tabs.bolsas }">
+					<div class="tabs-content" ng-repeat="detalle in grupo.detalle">
+						<div class="tab-content">
 							
 							<div class="item-row-empty">
 								<div class="item-col c-black">
-										<h3>Las bolsas que componen tu servicio son:</h3>
+									<h3>Conoce el saldo de cada una de las bolsas:</h3>
 								</div>
 							</div>
-							<div class="item-row-empty" ng-repeat="bolsa in item.bolsas">
+							
+							<div class="item-row-empty" ng-repeat="bolsa in detalle.bolsas">
 								<div class="item-col">
 									{{bolsa.nombre}}
 								</div>
 								<div class="item-col t-right padding-left-20">
 										{{bolsa.incluido}}
 								</div>
+								<div class="item-col t-right padding-left-20">
+									<i class="icon icon-info"></i>
+								</div>
 							</div>
-							<!-- <div class="item-row-empty">
-									<div class="item-col c-black">
-											<h3>Las bolsas que componen tu servicio son:</h3>
-									</div>
-								</div> -->
+
+							
+							<div class="item-row-line c-green">
+								<div class="item-col">
+									<b>Total Saldo</b>
+								</div>
+								<div class="item-col">
+									<b>{{grupo.disponible}}</b>
+								</div>
+							</div>
 
 						</div>
-
-						<div ng-if="item.saldo" class="tab-content"  ng-class="{ 'animation' : item.tabs.saldo }">
-								<div class="item-row-empty border-bottom-gray">
-									<div class="item-col width-114 t-center">
-										<span>Saldo</span><br>
-										<h1><b>{{item.saldo.saldo}}</b></h1>
-									</div>
-								</div>
-								<div>
-									<h2>Descripción</h2>
-									<p>
-										{{item.saldo.descripcion}}
-									</p>
-								</div>
-						</div>
-						<div ng-if="item.beneficios" class="tab-content"  ng-class="{ 'animation' : item.tabs.beneficios }">
-								<div class="item-row-empty border-bottom-gray">
-									<div class="item-col width-114 t-center">
-										<span>Saldo</span><br>
-										<h1><b>{{item.beneficios.saldo}}</b></h1>
-									</div>
-								</div>
-								<div>
-									<h2>Descripción</h2>
-									<p>
-										{{item.beneficios.descripcion}}
-									</p>
-								</div>
-						</div>
-						<div ng-if="item.monedas" class="tab-content"  ng-class="{ 'animation' : item.tabs.monedas }">
-								<div class="item-row-empty border-bottom-gray">
-									<div class="item-col width-114 t-center">
-										<span>Saldo</span><br>
-										<h1><b>{{item.monedas.saldo}}</b></h1>
-									</div>
-								</div>
-								<div>
-									<h2>Descripción</h2>
-									<p>
-										{{item.monedas.descripcion}}
-									</p>
-								</div>
-						</div>
-
-
 					</div>
+
 				</div>
 			</div>
 
@@ -214,7 +98,7 @@
 							<h1><b></b></h1>
 						</div>
 						<div class="item-col width-36">
-							<i class="item-ico-arrow att-arrow-regular"></i>
+							<i class="icon item-ico-arrow att-arrow-regular"></i>
 						</div>
 					</div>
 					<div class="overview"></div>

@@ -3,13 +3,13 @@
 
     var controller = function ($scope, $rootScope, $routeParams, $compile) {
 
-        // $scope.toDetail = false;
-        // $scope.detail = {};
         $scope.spin = false;
+        $scope.career = "UNEFON";
+        $scope.titulo = "BENEFICIOS";
 
         $scope.showDetail = function(item, id){
 
-            $scope.item = item;
+            $scope.grupo = item;
             $scope.career;
             var element = document.getElementById(id);
             var elementCloned =  element.cloneNode(true);
@@ -50,45 +50,8 @@
             // Animation
             setTimeout(() => {
                 elementCloned.classList.add('transition');
-                $scope.factoryBar($scope.chart);
+                // $scope.factoryBar($scope.chart);
             }, 100);
-        };
-
-        $scope.factoryBar = function(obj){
-            var ctx = document.getElementById('myChart').getContext('2d');
-                Chart.defaults.global.defaultFontSize = 8;
-                var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'bar',
-
-                // The data for our dataset
-                data: {
-                    labels: obj.labels,
-                    datasets: [{
-                        label: "",
-                        backgroundColor: $scope.carrer,
-                        borderColor: 'none',
-                        data: obj.data,
-                    }]
-                },
-
-                // Configuration options go here
-                options: {
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    }
-
-                }
-            });
         };
 
         $scope.hideDetail = function(id, top){
@@ -96,7 +59,7 @@
             el.classList.remove('transition');
         
             setTimeout(() => {
-                $scope.item = {};
+                $scope.grupo = {};
                 el.remove();
             }, 300);
         };
@@ -112,29 +75,13 @@
             }, 300);
         };
 
-        $scope.getColums = function(obj){
-            var col = 0;
-            col += obj.limitado ? 1 : 0;
-            col += obj.ilimitado ? 1 : 0;
-            col += obj.bolsas ? 1 : 0;
-            col += obj.saldo ? 1 : 0;
-            col += obj.beneficios ? 1 : 0;
-            col += obj.monedas ? 1 : 0;
-            return 'col-' + col;
-        };
-
-        $scope.resetTabs = function(tabs){
-            for(var i in tabs){
-                tabs[i] = false;
-            }
-        };
         $scope.resetConsumosTabs = function(tab){
             for(var i in $scope.consumos){
                 $scope.consumos[i].active = false;
             }
             $scope.chart = tab.chart;
             $scope.consumosTable = tab;
-            $scope.factoryBar($scope.chart);
+            // $scope.factoryBar($scope.chart);
             tab.active = true;
         };
         $scope.changePeriodo = function(index){
@@ -230,7 +177,38 @@
                 contenido: []
             }
         };
-       $scope.cartera = {
+       
+       $scope.beneficios = {
+           "color":"yellow",
+           "grupos": [
+               {
+                   "tipoBolsa": "saldos",
+                   "icon":"att-money-slim",
+                   "nombre":"Saldo Total",
+                   "disponible": "$ 100",
+                   "detalle": [
+                       {
+                           "disponible": "$100",
+                            "incluido": "",
+                            "consumido": "",
+                            "bolsas": [
+                                {
+                                    "nombre": "Saldo Todo Propósito",
+                                    "incluido": "$ 100",
+                                    "expiracion": "21 de noviembre del 2018",
+                                    "congelado": false,
+                                    "descripción": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                }
+                            ]
+                       }
+                   ]
+               }
+           ]
+       }
+       
+       
+       
+        $scope.cartera = {
         "color":"blue",
         "titulo":"CARTERA",
         "career":"UNEFON",
@@ -359,37 +337,6 @@
             ]
         }]
     };
-
-    for(var i in $scope.cartera.grupos){
-        var obj = $scope.cartera.grupos[i];
-        obj.tabs = { limitado: false, illimitado: false, bolsas: false, saldo: false, beneficios: false, monedas: false  };
-
-        if(obj.ilimitado){
-            obj.tabs.ilimitado = true;
-        }else{
-            if(obj.limitado){
-                obj.tabs.limitado = true;
-            }else{
-                if(obj.bolsas){
-                    obj.tabs.bolsas = true;
-                }else{
-                    if(obj.saldo){
-                        obj.tabs.saldo = true;
-                    }else{
-                        if(obj.beneficios){
-                            obj.tabs.beneficios = true;
-                        }else{
-                            if(obj.monedas){
-                                obj.tabs.monedas = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
-    
-
         
     var internet = $scope.consumos.internet;
     var llamadas = $scope.consumos.llamadas;
