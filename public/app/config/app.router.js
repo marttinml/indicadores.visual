@@ -23,6 +23,13 @@
         });
 
 
+        // cartera
+        $routeProvider.when('/beneficios/:key', {
+            templateUrl: baseUrl + 'cartera/views/cartera.view.html',
+            controller: 'CarteraController'
+        });
+
+
         
 
         // http

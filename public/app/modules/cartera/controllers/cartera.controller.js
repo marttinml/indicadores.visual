@@ -231,7 +231,7 @@
             }
         };
        $scope.cartera = {
-        "color":"yellow",
+        "color":"blue",
         "titulo":"CARTERA",
         "career":"UNEFON",
         "fechaCorte": "07 de Octubre",
