@@ -435,6 +435,12 @@ hr{
 	display: block;
 	background-image: url(icon/ico_info_gray.svg);
 }
+.icon-padlock{
+	height: 20px;
+	width: 20px;
+	display: block;
+	background-image: url(icon/icon_padlock_green.svg);
+}
 .to-detail .item-row{
 	visibility: hidden;
 }
