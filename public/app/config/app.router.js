@@ -1,9 +1,8 @@
 /*global angular*/
 (function () {
 
-    var router = function ($routeProvider) {
+    var router = function ($routeProvider, $locationProvider) {
 
-        
         var baseUrl = 'app/modules/';
 
          // passcode
@@ -28,9 +27,11 @@
             templateUrl: baseUrl + 'cartera/views/cartera.view.html',
             controller: 'CarteraController'
         });
+
+        // $locationProvider.html5Mode(true);
     };
 
-    router.$inject = ['$routeProvider'];
+    router.$inject = ['$routeProvider', '$locationProvider'];
     angular.module('app').config(router);
 
 })();

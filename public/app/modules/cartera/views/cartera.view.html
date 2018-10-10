@@ -1,5 +1,5 @@
 <att-spin ng-class="{hide:spin}"></att-spin>
-<main ng-class="beneficios.color" ng-class="{'to-detail': item.toDetail}">
+<main ng-class="beneficios.color" ng-class="{'to-detail': item.toDetail}" ng-show="spin">
 		<att-header h1="titulo" h2="career" ></att-header>
 		
 
@@ -111,8 +111,7 @@
 						</div>
 						<hr>
 						<div class="item-row-empty">
-							<div class="item-col fs-14">
-								{{descripcion}}
+							<div class="item-col fs-14" ng-bind-html="descripcion">
 							</div>
 						</div>
 					</div>

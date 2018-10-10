@@ -233,7 +233,7 @@
                                     "incluido": "$ 100",
                                     "expiracion": "21 de noviembre del 2018",
                                     "congelado": false,
-                                    "descripcion": "Sirve para: \n Compra de paquetes de Beneficios de prepago (automáticamente a partir de recargas de $30.00 pesos)\n Compra de servicios adicionales (Prip, paquetes de datos, etc.)\n Consumo de servicios “pay as you go”:\n Minutos de telefonía nacional o de larga distancia mundial\n \n Datos para navegación en Internet (MB)\n Mensajes de texto (SMS) y multimedia (MMS)\n  Roaming Internacional\n \n Compra de contenido y servicios de valor agregado\n Pago de suscripciones disponibles para la oferta de prepago de Unefon\n SMS Premium\n Marcación a números 900s o con cobro por servicio"
+                                    "descripcion": "Sirve para: <br/> Compra de paquetes de Beneficios de prepago (automáticamente a partir de recargas de $30.00 pesos)<br/> Compra de servicios adicionales (Prip, paquetes de datos, etc.)<br/> Consumo de servicios “pay as you go”:<br/> Minutos de telefonía nacional o de larga distancia mundial<br/> <br/> Datos para navegación en Internet (MB)<br/> Mensajes de texto (SMS) y multimedia (MMS)<br/>  Roaming Internacional<br/> <br/> Compra de contenido y servicios de valor agregado<br/> Pago de suscripciones disponibles para la oferta de prepago de Unefon<br/> SMS Premium<br/> Marcación a números 900s o con cobro por servicio"
                                 },
                                 {
                                     "nombre": "Saldo Comprado",
