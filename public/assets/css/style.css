@@ -165,22 +165,40 @@ hr{
 
 .f-light{
 	font-family: ATTAleckSans_Lt, sans-serif;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 .f-medium{
 	font-family: ATTAleckSans_Md, sans-serif;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 .blue .f-regular{
 	font-family: ATTAleckSans_Rg, sans-serif!important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 .yellow .f-regular{
 	font-family: Gloriola_Rg, sans-serif!important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 .yellow .f-light{
 	font-family: Gloriola_Lt, sans-serif!important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 .yellow .f-medium{
 	font-family: Gloriola_Md, sans-serif!important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 /* Font Color */
@@ -241,6 +259,9 @@ hr{
 	font-size: 12px;
 }
 
+.height-25{
+	height: 25px;
+}
 .blue .tabs .tab.active{
 	border-bottom: 1px solid rgb(0,159,219);
 	color: rgb(0,159,219);
@@ -436,10 +457,13 @@ hr{
 	background-image: url(icon/ico_info_gray.svg);
 }
 .icon-padlock{
-	height: 20px;
+	height: 18px;
 	width: 20px;
-	display: block;
+	display: inline-block;
 	background-image: url(icon/icon_padlock_green.svg);
+}
+.fload-right{
+	float: right;
 }
 .to-detail .item-row{
 	visibility: hidden;
@@ -594,12 +618,14 @@ table.detalle-consumos thead{
 }
 table.detalle-consumos th{
 	padding: 10px 20px;
+	font-size: 13px;
 	font-weight: normal;
 }
 table.detalle-consumos td{
 	padding: 10px 20px;
 	font-weight: normal;
 	border-bottom: 1px solid rgb(222,222,222);
+	font-size: 13px;
 }
 
 .overflow-auto{

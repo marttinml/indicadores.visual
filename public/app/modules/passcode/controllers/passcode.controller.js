@@ -45,7 +45,7 @@
             if(!$(this).next('.input-card').length){
                 console.log($(this).val());
                 if(Number($(this).val()) === 1){
-                    location.href = '#/beneficios/7843yr43ur43/u48rfj34d83'
+                    location.href = '#/beneficios/7843yr43ur43'
                 }else{
                     $scope.passcodeFail = true;
                     $scope.$apply();

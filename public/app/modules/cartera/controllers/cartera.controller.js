@@ -133,28 +133,7 @@
                     ['4 Sep', '8'],
                     ['5 Sep', '8'],
                     ['6 Sep', '8'],
-                    ['7 Sep', '8'],
-                    ['8 Sep', '8'],
-                    ['9 Sep', '0'],
-                    ['10 Sep', '8'],
-                    ['11 Sep', '8'],
-                    ['12 Sep', '8'],
-                    ['13 Sep', '8'],
-                    ['15 Sep', '8'],
-                    ['16 Sep', '8'],
-                    ['17 Sep', '8'],
-                    ['18 Sep', '8'],
-                    ['19 Sep', '8'],
-                    ['20 Sep', '20'],
-                    ['21 Sep', '8'],
-                    ['22 Sep', '8'],
-                    ['23 Sep', '50'],
-                    ['25 Sep', '8'],
-                    ['26 Sep', '8'],
-                    ['27 Sep', '8'],
-                    ['28 Sep', '30'],
-                    ['29 Sep', '8'],
-                    ['30 Sep', '8'],
+                    ['7 Sep', '8']
                 ]
             },
             llamadas: {
@@ -203,8 +182,35 @@
             mensajes:{
                 icono: 'att-consumo-mensajes',
                 tipo: 'Mensajes',
-                titulos: [],
-                contenido: []
+                titulos: ['Número', 'Fecha', 'Minutos', 'Hora','Compañia','Localidad','Costo'],
+                contenido: [
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '0', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '20', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '10', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+                    ['556787001', '12 Dic', '5', '5:80','IUSACELL','CDMX','$5,00'],
+
+                ]
             }
         };
        
@@ -227,7 +233,7 @@
                                     "incluido": "$ 100",
                                     "expiracion": "21 de noviembre del 2018",
                                     "congelado": false,
-                                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                    "descripcion": "Sirve para: \n Compra de paquetes de Beneficios de prepago (automáticamente a partir de recargas de $30.00 pesos)\n Compra de servicios adicionales (Prip, paquetes de datos, etc.)\n Consumo de servicios “pay as you go”:\n Minutos de telefonía nacional o de larga distancia mundial\n \n Datos para navegación en Internet (MB)\n Mensajes de texto (SMS) y multimedia (MMS)\n  Roaming Internacional\n \n Compra de contenido y servicios de valor agregado\n Pago de suscripciones disponibles para la oferta de prepago de Unefon\n SMS Premium\n Marcación a números 900s o con cobro por servicio"
                                 },
                                 {
                                     "nombre": "Saldo Comprado",

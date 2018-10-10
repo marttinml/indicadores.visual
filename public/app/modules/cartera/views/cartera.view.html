@@ -111,7 +111,7 @@
 						</div>
 						<hr>
 						<div class="item-row-empty">
-							<div class="item-col">
+							<div class="item-col fs-14">
 								{{descripcion}}
 							</div>
 						</div>
@@ -188,7 +188,7 @@
 		<div class="tabs col-3">
 			<div class="tab" ng-repeat="item in consumos" ng-class="{ 'active' : item.active }"  ng-click="resetConsumosTabs(item);">
 				<i class="icon" ng-class="item.icono"></i>
-				<h3>{{item.tipo}}</h3>
+				<span class="f-medium fs-14">{{item.tipo}}</span>
 			</div>
 		</div>
 		<div class="tabs col-3 fs-12">

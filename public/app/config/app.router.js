@@ -19,12 +19,12 @@
 
 
         // beneficios token
-        $routeProvider.when('/beneficios/:token', {
+        $routeProvider.when('/beneficios/', {
             templateUrl: baseUrl + 'cartera/views/cartera.view.html',
             controller: 'CarteraController'
         });
         // beneficios token + sesion
-        $routeProvider.when('/beneficios/:token/:sesion', {
+        $routeProvider.when('/beneficios/:sesion', {
             templateUrl: baseUrl + 'cartera/views/cartera.view.html',
             controller: 'CarteraController'
         });
