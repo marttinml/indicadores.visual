@@ -2,7 +2,7 @@
 <html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
-	<title>Angular</title>
+	<title ng-bind="'Mi ' + $root.career"></title>
 
 	<meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
@@ -24,7 +24,6 @@
 	<link rel="stylesheet" href="app/modules/cartera/assets/cartera.style.css">
 </head>
 <body ng-controller="AppController">
-
 	<!-- Render view -->
 	<div ng-view></div>
 

@@ -4,7 +4,7 @@
     var controller = function ($scope, $rootScope, $routeParams, $compile) {
 
         $scope.spin = false;
-        $scope.career = "UNEFON";
+        $rootScope.career = "UNEFON";
         $scope.titulo = "BENEFICIOS";
         $scope.grupoObj = {};
         $scope.descriptionToggle = false;
@@ -54,6 +54,7 @@
             // Animation
             setTimeout(() => {
                 elementCloned.classList.add('transition');
+                $("HTML, BODY").animate({ scrollTop: 0 }, 200);
             }, 100);
 
         };
@@ -75,6 +76,7 @@
             // Animation
             setTimeout(() => {
                 elementCloned.classList.add('transition');
+                $("HTML, BODY").animate({ scrollTop: 0 }, 200);
             }, 100);
         };
 

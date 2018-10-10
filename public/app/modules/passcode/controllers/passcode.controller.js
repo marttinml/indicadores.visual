@@ -3,7 +3,8 @@
 
     var controller = function ($scope, $rootScope, $routeParams, $compile) {
         $scope.spin = false;
-        $scope.info = { titulo: '', career: ''};
+        $rootScope.career = "UNEFON";
+        $scope.titulo = "BENEFICIOS";
         $scope.passcodeFail = false;
         $scope.getInfo = function(){
             $scope.info = { titulo: 'BIENVENIDO A', career: 'UNEFON', color: 'yellow'};
@@ -23,7 +24,9 @@
         };
 
         $scope.recoverPasscode = function(){
+            $(".input-card").blur();
             $scope.obtionsAlert.show = true;
+            $("HTML, BODY").animate({ scrollTop: 0 }, 200);
         };
 
         $scope.getInfo();
