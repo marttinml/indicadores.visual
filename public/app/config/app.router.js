@@ -18,8 +18,13 @@
         });
 
 
-        // beneficios
-        $routeProvider.when('/beneficios/:key', {
+        // beneficios token
+        $routeProvider.when('/beneficios/:token', {
+            templateUrl: baseUrl + 'cartera/views/cartera.view.html',
+            controller: 'CarteraController'
+        });
+        // beneficios token + sesion
+        $routeProvider.when('/beneficios/:token/:sesion', {
             templateUrl: baseUrl + 'cartera/views/cartera.view.html',
             controller: 'CarteraController'
         });

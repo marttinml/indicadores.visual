@@ -337,6 +337,12 @@
        };
         
        $scope.init = function(){
+
+            if(!$routeParams.sesion){
+                location.href = '#/passcode'
+            }
+
+
             var internet = $scope.consumos.internet;
             var llamadas = $scope.consumos.llamadas;
             var mensajes = $scope.consumos.mensajes;
