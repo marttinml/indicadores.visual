@@ -6,16 +6,41 @@
         $scope.spin = false;
         $scope.career = "UNEFON";
         $scope.titulo = "BENEFICIOS";
+        $scope.grupoObj = {};
+        $scope.descriptionToggle = false;
+        $scope.descripcion = '';
+        $scope.descripcionTitle = '';
+        $scope.ILIMITADAS = ['Ilimitadas', 'ilimitadas', 'Ilimitados', 'ilimitados', 'Ilimitado', 'ilimitado','Ilimitada', 'ilimitada'];
+
+        $scope.esIllimitada = function(str){
+          for(var i in $scope.ILIMITADAS){
+            var ILIMITADAS = $scope.ILIMITADAS[i];
+            if(str === ILIMITADAS){
+                return true;
+            }
+          }
+          return false;
+        };
+        $scope.showDescription = function(desc, title){
+            $scope.descripcion = desc;
+            $scope.descripcionTitle = title;
+            $scope.descriptionToggle = true;
+        };
+        $scope.hideDescription = function(){
+            $scope.descriptionToggle = false;
+            $scope.descripcion = '';
+            $scope.descripcionTitle = '';
+        };
 
         $scope.showDetail = function(item, id){
 
-            $scope.grupo = item;
-            $scope.career;
+            $scope.grupoObj = item;
             var element = document.getElementById(id);
             var elementCloned =  element.cloneNode(true);
             elementCloned.classList.add('wrapper-item-cloned');
             elementCloned.setAttribute('id', id + 'cloned');
             elementCloned.removeAttribute('ng-repeat');
+            elementCloned.removeAttribute('ng-if');
             elementCloned.childNodes[1].setAttribute('ng-click','hideDetail("'+id+'cloned'+'", '+element.offsetTop+')');
             elementCloned.style.top = (element.offsetTop - 10) + 'px';
 
@@ -23,6 +48,9 @@
             var content = linkFn($scope);
             var elementContent = angular.element(document.getElementById("contentItems")).append(content);
             
+            var element = document.getElementById('contentBeneficios');
+            var elementContent = angular.element(elementCloned).append(element);
+
             // Animation
             setTimeout(() => {
                 elementCloned.classList.add('transition');
@@ -42,15 +70,11 @@
             var content = linkFn($scope);
             var elementContent = angular.element(document.getElementById("contentItems")).append(content);
             
-            // console.log(elementCloned.childNodes[5].childNodes[1]);
-            // elementCloned.childNodes[5].childNodes[5].childNodes[1].setAttribute('id','myChartCloned');
-            
             var element = document.getElementById('contentConsumos');
             var elementContent = angular.element(elementCloned).append(element);
             // Animation
             setTimeout(() => {
                 elementCloned.classList.add('transition');
-                // $scope.factoryBar($scope.chart);
             }, 100);
         };
 
@@ -59,8 +83,12 @@
             el.classList.remove('transition');
         
             setTimeout(() => {
-                $scope.grupo = {};
+                $scope.grupoObj = {};
+                var element = document.getElementById('contentBeneficios');
+                var elementContent = angular.element(document.getElementById('wrappersContents')).append(element);
                 el.remove();
+                $scope.hideDescription();
+                $scope.$apply();
             }, 300);
         };
 
@@ -197,183 +225,138 @@
                                     "incluido": "$ 100",
                                     "expiracion": "21 de noviembre del 2018",
                                     "congelado": false,
-                                    "descripción": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                },
+                                {
+                                    "nombre": "Saldo Comprado",
+                                    "incluido": "$ 100",
+                                    "expiracion": "21 de noviembre del 2018",
+                                    "congelado": true,
+                                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                },
+                                {
+                                    "nombre": "Saldo de Regalo",
+                                    "incluido": "$ 0",
+                                    "expiracion": "NA",
+                                    "congelado": false,
+                                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
                                 }
                             ]
                        }
                    ]
-               }
+               },
+               {
+                "tipoBolsa": "saldos",
+                "icon":"att-a-slim",
+                "nombre":"Monedas AT&T",
+                "disponible": "$ 100",
+                "detalle": [
+                    {
+                        "disponible": "$100",
+                         "incluido": "",
+                         "consumido": "",
+                         "bolsas": [
+                             {
+                                 "nombre": "Monedas AT&T",
+                                 "incluido": "$ 100",
+                                 "expiracion": "21 de noviembre del 2018",
+                                 "congelado": false,
+                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                             }
+                         ]
+                    }
+                ]
+            },
+               {
+                "tipoBolsa": "beneficios",
+                "icon":"att-internet-slim",
+                "nombre":"Internet Propio",
+                "disponible": "1 GB",
+                "detalle": [
+                    {
+                        "disponible": "$100",
+                         "incluido": "1 GB",
+                         "consumido": "0 GB",
+                         "bolsas": [
+                             {
+                                 "nombre": "Saldo Todo Propósito",
+                                 "incluido": "1 GB",
+                                 "expiracion": "21 de noviembre del 2018",
+                                 "congelado": false,
+                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                             }
+                         ]
+                    }
+                ]
+            },
+            {
+                "tipoBolsa": "beneficios",
+                "icon":"att-group-slim",
+                "nombre":"Redes Sociales",
+                "disponible": "2 GB",
+                "detalle": [
+                    {
+                         "consumido": "0 GB",
+                         "bolsas": [
+                             {
+                                 "nombre": "Redes Sociales Beneficio Recarga (Facebook, WhatsApp, Twitter Uber, Instagram)",
+                                 "incluido": "2 GB",
+                                 "expiracion": "21 de noviembre del 2018",
+                                 "congelado": false,
+                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                             }
+                         ]
+                    },
+                    {
+                         "bolsas": [
+                             {
+                                 "nombre": "Redes Sociales Beneficio Recarga (Facebook, WhatsApp, Twitter Uber, Instagram)",
+                                 "incluido": "Ilimitadas",
+                                 "expiracion": "21 de noviembre del 2018",
+                                 "congelado": false,
+                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                             }
+                         ]
+                    }
+
+                ]
+            },
+            {
+                "tipoBolsa": "beneficios",
+                "icon":"att-caller-history-slim",
+                "nombre":"Llamadas",
+                "disponible": "Ilimitadas"
+            },
+            {
+                "tipoBolsa": "beneficios",
+                "icon":"att-messaging-slim",
+                "nombre":"Mensajes",
+                "disponible": "Ilimitados"
+            }
            ]
-       }
-       
-       
-       
-        $scope.cartera = {
-        "color":"blue",
-        "titulo":"CARTERA",
-        "career":"UNEFON",
-        "fechaCorte": "07 de Octubre",
-        "proximaAsignacion": "27 días",
-        "grupos": [
-            {
-                "icon": "att-money-slim",
-                "nombre": "Saldo Total",
-                "disponible": "$220",
-                "saldo": {
-                    "saldo": "$20",
-                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga",
-                },
-                "beneficios": {
-                    "saldo": "$200",
-                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga",
-                }
-            },
-            {
-                "icon": "att-a-slim",
-                "nombre": "Monedas",
-                "disponible": "$0",
-                "monedas": {
-                    "saldo": "$0",
-                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga",
-                }
-            },
-            {
-            "icon": "att-internet-slim",
-            "nombre": "Internet",
-            "disponible": "6 GB",
-            "limitado": {
-                "incluido": "14 GB",
-                "consumido": "7 GB",
-                "disponible":"6 GB",
-                "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga",
-            },
-            "bolsas":[{
-                    "nombre": "Internet Incluido en plan",
-                    "incluido": "4 GB",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                },
-                {
-                    "nombre": "Internet Promoción",
-                    "incluido": "4 GB",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                }
-            ]
-        },
-        {
-            "icon": "att-group-slim",
-            "nombre": "Redes Sociales",
-            "disponible": "···",
-            "ilimitado": {
-                "incluido": "Ilimitado",
-                "consumido": "1 GB",
-                "descripcion": "Esta bolsa te la puedes gastar en FB TW WA SP INS UB",
-            },
-            "limitado": {
-                "incluido": "2 GB",
-                "consumido": "0 GB",
-                "disponible":"2 GB",
-                "descripcion": "Esta bolsa te la puedes gastar en FB TW WA SP INS UB",
-            },
-            "bolsas":[{
-                    "nombre": "Redes Sociales incluidas",
-                    "incluido": "2 GB",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                },
-                {
-                    "nombre": "Redes sociales",
-                    "incluido": "Ilimitado",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                }
-            ]
-        },
-        {
-            "icon": "att-messaging-slim",
-            "nombre": "Mensajes",
-            "disponible": "Ilimitado",
-            "ilimitado": {
-                "incluido": "Ilimitado",
-                "consumido": "42 SMS",
-                "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga",
-            },
-            "bolsas":[{
-                    "nombre": "Internet Incluido en plan",
-                    "incluido": "4 GB",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                },
-                {
-                    "nombre": "Internet Promoción",
-                    "incluido": "4 GB",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                }
-            ]
-        },
-        {
-            "icon": "att-caller-history-slim",
-            "nombre": "Llamadas",
-            "disponible": "Ilimitadas",
-            "ilimitado": {
-                "incluido": "Ilimitado",
-                "consumido": "42 min",
-                "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga",
-            },
-            "bolsas":[{
-                    "nombre": "Minutos incluidos comunidad AT&T",
-                    "incluido": "Ilimitado",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                },
-                {
-                    "nombre": "Minutos incluidos otros destinos",
-                    "incluido": "Ilimitado",
-                    "fechaExpiracion": "21/10/2019",
-                    "congelado": false
-                }
-            ]
-        }]
-    };
+       };
         
-    var internet = $scope.consumos.internet;
-    var llamadas = $scope.consumos.llamadas;
-    var mensajes = $scope.consumos.mensajes;
-    internet.chart = { labels: [], data: []};
-    llamadas.chart = { labels: [], data: []};
-    mensajes.chart = { labels: [], data: []};
-
-    for(j in internet.contenido){
-        var jtem = internet.contenido[j];
-        internet.chart.labels.push(jtem[0]);
-        internet.chart.data.push(Number(jtem[1]));
-    }
-    for(j in llamadas.contenido){
-        var jtem = llamadas.contenido[j];
-        llamadas.chart.labels.push(jtem[1]);
-        llamadas.chart.data.push(Number(jtem[2]));
-    }
-    for(j in mensajes.contenido){
-        var jtem = mensajes.contenido[j];
-        mensajes.chart.labels.push(jtem[0]);
-        mensajes.chart.data.push(jtem[0]);
-    }
-
+       $scope.init = function(){
+            var internet = $scope.consumos.internet;
+            var llamadas = $scope.consumos.llamadas;
+            var mensajes = $scope.consumos.mensajes;
+            internet.chart = { labels: [], data: []};
+            llamadas.chart = { labels: [], data: []};
+            mensajes.chart = { labels: [], data: []};
+        
+            $scope.radioPeriodo = [{active: true},{active: false}];
+            
+            internet.active = true;
+            $scope.consumosTable = internet;
+            $scope.chart = internet.chart;
+            
+            setTimeout(function(){
+                $scope.spin = true;
+                $scope.$apply();
+            },1000);
+       };
     
-    $scope.radioPeriodo = [{active: true},{active: false}];
-    
-    internet.active = true;
-    $scope.consumosTable = internet;
-    $scope.chart = internet.chart;
-    $scope.carrer = $scope.cartera.color === 'yellow'? 'rgba(255,198,0,.8)' : 'rgba(0,159,219,.8)';
-
-    setTimeout(function(){
-        $scope.spin = true;
-        $scope.$apply();
-    },1000);
-    
+       $scope.init();
     };
     controller.$inject = ['$scope','$rootScope','$routeParams', '$compile'];
     angular.module('app').controller('CarteraController', controller);

@@ -2,22 +2,16 @@
 <main ng-class="beneficios.color" ng-class="{'to-detail': item.toDetail}">
 		<att-header h1="titulo" h2="career" ></att-header>
 		
-	
-		<!-- <div class="item-row-full">
-			<div class="section-content">
-				<div class="item-col">El fecha de corte es el:</div> 
-				<div class="item-col t-right"><b>13 de mayo</b></div>
-			</div>
-		</div> -->
+
 		<section id="contentItems">
 			<div class="item-row-empty">
 				<b class="c-gray">
-					Hoy cuentas con:
+					Hoy tu saldo es de:
 				</b>
 			</div>
-			<div class="wrapper-item" ng-repeat="grupo in beneficios.grupos" ng-class="{'to-detail': grupo.toDetail}" id="iditem{{$index}}">
+			<div class="wrapper-item" ng-repeat="grupo in beneficios.grupos" ng-if="grupo.tipoBolsa === 'saldos'" ng-class="{'to-detail': grupo.toDetail}" id="iditems{{$index}}">
 				
-				<div class="item-row" ng-click="showDetail(grupo, 'iditem' + $index)">
+				<div class="item-row" ng-click="!esIllimitada(grupo.disponible) && showDetail(grupo, 'iditems' + $index)">
 					<div class="item-col width-40 padding-lr-20">
 						<i class="item-ico" ng-class="grupo.icon"></i>
 					</div>
@@ -25,60 +19,46 @@
 						<span>{{grupo.nombre}}</span>
 					</div>
 					<div class="item-col width-114 t-center">
-						<h1><b>{{grupo.disponible}}</b></h1>
+						<h1 ng-if="!esIllimitada(grupo.disponible)"><b>{{grupo.disponible}}</b></h1>
+						<h1 ng-if="esIllimitada(grupo.disponible)"><b class="c-green fs-18">{{grupo.disponible}}</b></h1>
 					</div>
 					<div class="item-col width-36">
-						<i class="icon item-ico-arrow att-arrow-regular"></i>
+						<i class="icon item-ico-arrow att-arrow-regular"  ng-if="!esIllimitada(grupo.disponible)"></i>
 					</div>
 				</div>
 
 				<div class="overview"></div>
-				<div class="alert-detail">
-					<hr>
-					
-					<div class="tabs-content" ng-repeat="detalle in grupo.detalle">
-						<div class="tab-content">
-							
-							<div class="item-row-empty">
-								<div class="item-col c-black">
-									<h3>Conoce el saldo de cada una de las bolsas:</h3>
-								</div>
-							</div>
-							
-							<div class="item-row-empty" ng-repeat="bolsa in detalle.bolsas">
-								<div class="item-col">
-									{{bolsa.nombre}}
-								</div>
-								<div class="item-col t-right padding-left-20">
-										{{bolsa.incluido}}
-								</div>
-								<div class="item-col t-right padding-left-20">
-									<i class="icon icon-info"></i>
-								</div>
-							</div>
-
-							
-							<div class="item-row-line c-green">
-								<div class="item-col">
-									<b>Total Saldo</b>
-								</div>
-								<div class="item-col">
-									<b>{{grupo.disponible}}</b>
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
+				
 			</div>
 
-			<!-- <div class="item-row-empty">
-				<div class="item-col">Tu próxima asignación será en:</div> 
-				<div class="item-col t-right"><b>25 días</b></div>
-			</div> -->
+			<div class="item-row-empty">
+					<b class="c-gray">
+						Gracias a tu recarga cuentas con:
+					</b>
+				</div>
+				<div class="wrapper-item" ng-repeat="grupo in beneficios.grupos"  ng-if="grupo.tipoBolsa === 'beneficios'" ng-class="{'to-detail': grupo.toDetail}" id="iditemb{{$index}}">
+					
+					<div class="item-row" ng-click="!esIllimitada(grupo.disponible) && showDetail(grupo, 'iditemb' + $index)">
+						<div class="item-col width-40 padding-lr-20">
+							<i class="item-ico" ng-class="grupo.icon"></i>
+						</div>
+						<div class="item-col">
+							<span>{{grupo.nombre}}</span>
+						</div>
+						<div class="item-col width-114 t-center">
+							<h1 ng-if="!esIllimitada(grupo.disponible)"><b>{{grupo.disponible}}</b></h1>
+							<h1 ng-if="esIllimitada(grupo.disponible)"><b class="c-green fs-18">{{grupo.disponible}}</b></h1>
+						</div>
+						<div class="item-col width-36">
+							<i class="icon item-ico-arrow att-arrow-regular"  ng-if="!esIllimitada(grupo.disponible)"></i>
+						</div>
+					</div>
+	
+					<div class="overview"></div>
+					
+				</div>
 
-			<!-- <hr> -->
+			
 	
 			<div class="item-row-empty">
 				<b class="c-gray">
@@ -102,9 +82,7 @@
 						</div>
 					</div>
 					<div class="overview"></div>
-					<!-- <div class="alert-detail">
-						<hr>
-					</div> -->
+		
 				</div>
 			</section>
 		</section>
@@ -115,7 +93,96 @@
 
 
 
+
+
 	<div id="wrappersContents">
+		
+			<div id="contentBeneficios" class="alert-detail">
+					<hr>
+					
+					<div ng-show="descriptionToggle">
+						<div class="item-row-empty">
+							<div class="item-col width-40" ng-click="hideDescription()">
+								<i class="icon item-ico-arrow att-arrow-regular icon-left"></i>
+							</div>
+							<div class="item-col">
+								<h3 class="f-medium">{{descripcionTitle}}</h3>
+							</div>
+						</div>
+						<hr>
+						<div class="item-row-empty">
+							<div class="item-col">
+								{{descripcion}}
+							</div>
+						</div>
+					</div>
+					<div  ng-hide="descriptionToggle">
+
+							<div class="item-row-empty">
+								<div class="item-col">
+									<h3 class="f-medium">Conoce el saldo de cada una de las bolsas:</h3>
+								</div>
+							</div>
+							<div ng-repeat="detalle in grupoObj.detalle">
+
+									<div class="padding-top-bottom-10" ng-repeat="bolsa in detalle.bolsas" ng-class="{'opacity-30':bolsa.congelado}">
+										<div class="item-row-empty margin-top-bottom-0 padding-top-bottom-0">
+											<div class="item-col fs-14 f-regular">
+												{{bolsa.nombre}}
+											</div>
+											<div class="item-col t-right padding-left-20 f-regular min-width-80">
+													<span ng-if="bolsa.incluido !== 'Ilimitadas'">+ {{bolsa.incluido}}</span>
+													<span ng-if="bolsa.incluido === 'Ilimitadas'" class="c-green f-medium">{{bolsa.incluido}}</span>
+											</div>
+											<div class="item-col t-right padding-left-20 width-40">
+												<i class="icon icon-info" ng-click="showDescription(bolsa.descripcion, bolsa.nombre)"></i>
+											</div>
+										</div>
+										<div class="item-row-empty margin-top-bottom-0 padding-top-bottom-0">
+											<div class="item-col fs-14 f-regular">
+												Vigencia <span class="c-black">{{bolsa.expiracion}} </span>
+											</div>
+											<div class="item-col fs-14 f-regular" ng-if="bolsa.congelado">
+												Congelado
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="item-row-empty margin-top-bottom-0" ng-if="detalle.incluido">
+										<div class="item-col fs-14">
+											Total incluido
+										</div>
+										<div class="item-col t-right">
+											{{detalle.incluido}}
+										</div>
+										<div class="item-col width-40"></div>
+									</div>
+									<div class="item-row-empty margin-top-bottom-0" ng-if="detalle.consumido">
+										<div class="item-col fs-14">
+											<b>Consumido</b>
+										</div>
+										<div class="item-col t-right">
+											<b>- {{detalle.consumido}}</b>
+										</div>
+										<div class="item-col width-40"></div>
+									</div>
+									<hr ng-if="detalle.consumido" >
+									<div class="item-row-empty c-green" ng-if="detalle.disponible">
+										<div class="item-col fs-14">
+											<b>Total Saldo</b>
+										</div>
+										<div class="item-col t-right">
+											<b>{{detalle.disponible}}</b>
+										</div>
+										<div class="item-col width-40"></div>
+									</div>
+			
+								</div>
+					</div>
+					
+
+				</div>
+		
 		<div id="contentConsumos" class="alert-detail"> 
 		<hr>
 		<div class="tabs col-3">
@@ -155,4 +222,6 @@
 			</table>
 		</div>
 	</div>
+
+
 	</div>

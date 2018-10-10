@@ -1,7 +1,7 @@
 /*global angular*/
 (function () {
 
-    var angularLib  = ["ngRoute","ngTouch","ngResource"];
+    var angularLib  = ["ngRoute","ngResource"];
 
     angular.module('app', angularLib);
 

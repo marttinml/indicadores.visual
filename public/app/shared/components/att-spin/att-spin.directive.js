@@ -1,7 +1,7 @@
 (function(){
 
 
-	var directive = function($swipe){
+	var directive = function(){
 		
 		var link = function(scope, element, attrs, ngModelCtrl){
 			

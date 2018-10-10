@@ -42,7 +42,7 @@ body, input, button,textarea{
 	font-family: ATTAleckSans_Rg, sans-serif;
 	font-weight: 100;
 	line-height: 1.2;
-	color: rgba(0,0,0,.6);
+	color: rgb(100,100,100);
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
@@ -50,6 +50,9 @@ body, input, button,textarea{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
+}
+body, input, button,textarea h1, h2, h3{
+	color: rgb(100,100,100);
 }
 
 body .yellow , .yellow input,.yellow  button,.yellow textarea{
@@ -167,17 +170,17 @@ hr{
 	font-family: ATTAleckSans_Md, sans-serif;
 }
 .blue .f-regular{
-	font-family: ATTAleckSans_Rg, sans-serif;
+	font-family: ATTAleckSans_Rg, sans-serif!important;
 }
 .yellow .f-regular{
-	font-family: Gloriola_Rg, sans-serif;
+	font-family: Gloriola_Rg, sans-serif!important;
 }
 
 .yellow .f-light{
-	font-family: Gloriola_Lt, sans-serif;
+	font-family: Gloriola_Lt, sans-serif!important;
 }
 .yellow .f-medium{
-	font-family: Gloriola_Md, sans-serif;
+	font-family: Gloriola_Md, sans-serif!important;
 }
 
 /* Font Color */
@@ -185,7 +188,7 @@ hr{
 	color: rgb(255,255,255);
 }
 .c-gray{
-	color: rgba(0,0,0,.6);
+	color: rgb(100,100,100);
 }
 .c-black{
 	color: rgba(0,0,0,1);
@@ -194,7 +197,22 @@ hr{
 	color: rgb(76,169,12);
 }
 
+.margin-top-bottom-0{
+	margin-top: 0!important;
+	margin-bottom: 0!important;
+}
+.padding-top-bottom-0{
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+}
+.padding-top-bottom-10{
+	padding-top: 10px!important;
+	padding-bottom: 10px!important;
+}
 
+.opacity-30{
+	opacity: .3;
+}
 .b-white{
 	background-color: rgb(255,255,255);
 }
@@ -210,6 +228,12 @@ hr{
 .fs-36{
 	font-size: 36px;
 }
+.fs-18{
+	font-size: 18px;
+}
+.fs-14{
+	font-size: 14px;
+}
 .fs-13{
 	font-size: 13px;
 }
@@ -222,7 +246,9 @@ hr{
 	color: rgb(0,159,219);
 }
 
-
+.min-width-80{
+	min-width: 80px;
+}
 .yellow .c-var{
 	color: rgb(255,198,0);
 }
@@ -315,6 +341,10 @@ hr{
 	vertical-align: middle;
 	transition: .3s;
 	transform: rotate(0deg);
+}
+
+.icon-left{
+	transform: rotate(90deg)!important;
 }
 .width-114{
 	width: 114px;
