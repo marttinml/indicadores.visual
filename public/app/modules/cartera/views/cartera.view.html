@@ -23,7 +23,7 @@
 						<h1 ng-if="esIllimitada(grupo.disponible)"><b class="c-green fs-18">{{grupo.disponible}}</b></h1>
 					</div>
 					<div class="item-col width-36">
-						<i class="icon item-ico-arrow att-arrow-regular"  ng-if="!esIllimitada(grupo.disponible)"></i>
+						<i class="icon icon-arrow icon-arrow"  ng-if="!esIllimitada(grupo.disponible)"></i>
 					</div>
 				</div>
 
@@ -50,7 +50,7 @@
 							<h1 ng-if="esIllimitada(grupo.disponible)"><b class="c-green fs-18">{{grupo.disponible}}</b></h1>
 						</div>
 						<div class="item-col width-36">
-							<i class="icon item-ico-arrow att-arrow-regular"  ng-if="!esIllimitada(grupo.disponible)"></i>
+							<i class="icon icon-arrow icon-arrow"  ng-if="!esIllimitada(grupo.disponible)"></i>
 						</div>
 					</div>
 	
@@ -78,7 +78,7 @@
 							<h1><b></b></h1>
 						</div>
 						<div class="item-col width-36">
-							<i class="icon item-ico-arrow att-arrow-regular"></i>
+							<i class="icon icon-arrow"></i>
 						</div>
 					</div>
 					<div class="overview"></div>
@@ -103,7 +103,7 @@
 					<div ng-show="descriptionToggle">
 						<div class="item-row-empty">
 							<div class="item-col width-40" ng-click="hideDescription()">
-								<i class="icon item-ico-arrow att-arrow-regular icon-left"></i>
+								<i class="icon icon-arrow icon-left"></i>
 							</div>
 							<div class="item-col">
 								<h3 class="f-medium">{{descripcionTitle}}</h3>
@@ -190,18 +190,24 @@
 				<span class="f-medium fs-14">{{item.tipo}}</span>
 			</div>
 		</div>
-		<div class="tabs col-3 fs-12">
-			<div>
-				Seleciona un periodo
+		<div class="">
+			<div class="item-row-empty">
+				<div class="item-col">
+					Seleciona un periodo
+				</div>
 			</div>
-			<div class="t-right" ng-click="changePeriodo(0)">
-				<i class="item-radio" ng-class="{active: radioPeriodo[0].active}"></i>
-				<span>Actual</span>
+			<hr>
+			<div class="item-row-empty t-center">
+				<div class="item-col">
+					<i class="icon icon-arrow icon-left" ng-click="periodoAnterior()" ng-class="{'opacity-30': !activeAnterior}"></i>
+				</div>
+				<div class="item-col">
+					<span>{{periodo}}</span></div>
+				<div class="item-col">
+					<i class="icon icon-arrow icon-right" ng-click="periodoSiguiente()"  ng-class="{'opacity-30': !activeSiguiente}"></i>
+				</div>
 			</div>
-			<div class="t-right" ng-click="changePeriodo(1)">
-				<i class="item-radio" ng-class="{active: radioPeriodo[1].active}"></i>
-				<span>Anterior</span>
-			</div>
+			
 		</div>
 		<!-- <div class="wrapper-chart">
 			<canvas id="myChart"></canvas>

@@ -114,12 +114,38 @@
             // $scope.factoryBar($scope.chart);
             tab.active = true;
         };
-        $scope.changePeriodo = function(index){
-            for(var i in $scope.radioPeriodo){
-                $scope.radioPeriodo[i].active = false;
+
+
+        $scope.periodoActual = 0;
+        $scope.periodoMax = 9;
+        $scope.activeAnterior = true;
+        $scope.activeSiguiente = false;
+        $scope.d1 = new Date();
+        $scope.d2 = new Date();
+        $scope.d2.setDate($scope.d2.getDate() - 7 );
+        $scope.meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre',];
+        $scope.periodo = 'Del ' + $scope.d1.getDate() + ' de '+ $scope.meses[$scope.d1.getMonth()] + ' al ' + $scope.d2.getDate() + ' de '+ $scope.meses[$scope.d2.getMonth()];
+
+        $scope.periodoAnterior = function(){
+            if($scope.periodoActual < $scope.periodoMax){
+                $scope.periodoActual++;
+                $scope.activeAnterior = $scope.periodoActual < $scope.periodoMax ? true : false;
+                $scope.activeSiguiente = true;
+                $scope.d1.setDate($scope.d1.getDate() - 7 );
+                $scope.d2.setDate($scope.d2.getDate() - 7 );
+                $scope.periodo = 'Del ' + $scope.d1.getDate() + ' de '+ $scope.meses[$scope.d1.getMonth()] + ' al ' + $scope.d2.getDate() + ' de '+ $scope.meses[$scope.d2.getMonth()];
             }
-            $scope.radioPeriodo[index].active = true;
-        }
+        };
+        $scope.periodoSiguiente = function(){
+            if($scope.periodoActual > 0){
+                $scope.periodoActual--;
+                $scope.activeSiguiente = $scope.periodoActual > 0 ? false : true;
+                $scope.activeAnterior = true;
+                $scope.d1.setDate($scope.d1.getDate() + 7 );
+                $scope.d2.setDate($scope.d2.getDate() + 7 );
+                $scope.periodo = 'Del ' + $scope.d1.getDate() + ' de '+ $scope.meses[$scope.d1.getMonth()] + ' al ' + $scope.d2.getDate() + ' de '+ $scope.meses[$scope.d2.getMonth()];
+            }
+        };
 
         $scope.consumos = {
             internet: {   
@@ -233,21 +259,21 @@
                                     "incluido": "$ 100",
                                     "expiracion": "21 de noviembre del 2018",
                                     "congelado": false,
-                                    "descripcion": "Sirve para: <br/> Compra de paquetes de Beneficios de prepago (automáticamente a partir de recargas de $30.00 pesos)<br/> Compra de servicios adicionales (Prip, paquetes de datos, etc.)<br/> Consumo de servicios “pay as you go”:<br/> Minutos de telefonía nacional o de larga distancia mundial<br/> <br/> Datos para navegación en Internet (MB)<br/> Mensajes de texto (SMS) y multimedia (MMS)<br/>  Roaming Internacional<br/> <br/> Compra de contenido y servicios de valor agregado<br/> Pago de suscripciones disponibles para la oferta de prepago de Unefon<br/> SMS Premium<br/> Marcación a números 900s o con cobro por servicio"
+                                    "descripcion": "Sirve para: <br/> <br/> Compra de paquetes de Beneficios de prepago (automáticamente a partir de recargas de $30.00 pesos)<br/> Compra de servicios adicionales (Prip, paquetes de datos, etc.)<br/> Consumo de servicios “pay as you go”:<br/> Minutos de telefonía nacional o de larga distancia mundial<br/> <br/> Datos para navegación en Internet (MB)<br/> Mensajes de texto (SMS) y multimedia (MMS)<br/>  Roaming Internacional<br/> <br/> Compra de contenido y servicios de valor agregado<br/> Pago de suscripciones disponibles para la oferta de prepago de Unefon<br/> SMS Premium<br/> Marcación a números 900s o con cobro por servicio"
                                 },
                                 {
                                     "nombre": "Saldo Comprado",
                                     "incluido": "$ 100",
                                     "expiracion": "21 de noviembre del 2018",
                                     "congelado": true,
-                                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                    "descripcion": "Sirve para:<br/><br/> Compra de servicios adicionales (Prip, paquetes de datos, etc.)<br/> Consumo de servicios “pay as you go”: <br/>Minutos de telefonía nacional o de larga distancia mundial<br/><br/> Datos para navegación en Internet (MB)<br/>Mensajes de texto (SMS) y multimedia (MMS)<br/> Roaming Internacional <br/><br/> Compra de contenido y servicios de valor agregado<br/>Pago de suscripciones disponibles para la oferta de prepago de Unefon<br/>SMS Premium<br/>Marcación a números 900s o con cobro por servicio"
                                 },
                                 {
                                     "nombre": "Saldo de Regalo",
                                     "incluido": "$ 0",
                                     "expiracion": "NA",
                                     "congelado": false,
-                                    "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                    "descripcion": "El Saldo de Regalo se otorga esporádica y promocionalmente y sirve para adquirir determinados servicios que se especifican en la promoción en la que se otorgue. <br/>  <br/> El Saldo de Regalo no se congela, ni acumula y su vigencia dependerá de las condiciones de cada promoción."
                                 }
                             ]
                        }
@@ -257,7 +283,7 @@
                 "tipoBolsa": "saldos",
                 "icon":"att-a-slim",
                 "nombre":"Monedas AT&T",
-                "disponible": "$ 100",
+                "disponible": "100",
                 "detalle": [
                     {
                         "disponible": "$100",
@@ -269,7 +295,7 @@
                                  "incluido": "$ 100",
                                  "expiracion": "21 de noviembre del 2018",
                                  "congelado": false,
-                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                 "descripcion": "Monto líquido equivalente a 1 peso de recarga, que se otorga de manera promocional y que está sujeto a una vigencia especifica."
                              }
                          ]
                     }
@@ -291,7 +317,7 @@
                                  "incluido": "1 GB",
                                  "expiracion": "21 de noviembre del 2018",
                                  "congelado": false,
-                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                 "descripcion": "Bolsa generada automáticamente a partir de recargas de $30.00 pesos, dependiendo la recarga es el monto del beneficio."
                              }
                          ]
                     }
@@ -311,7 +337,7 @@
                                  "incluido": "2 GB",
                                  "expiracion": "21 de noviembre del 2018",
                                  "congelado": false,
-                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                 "descripcion": "Es una cantidad de GB que se te asignan cada periodo para visualizar tus redes sociales con tu equipo móvil, al terminar los GB asignados existirán cargos adicionales que verás reflejados en tu facturación de servicio."
                              }
                          ]
                     },
@@ -322,7 +348,7 @@
                                  "incluido": "Ilimitadas",
                                  "expiracion": "21 de noviembre del 2018",
                                  "congelado": false,
-                                 "descripcion": "Saldo otorgado al realizar una recarga que sirve para adquirir cualquier servicio durante la vigencia de la recarga"
+                                 "descripcion": "Es una cantidad de GB que se te asignan cada periodo para visualizar tus redes sociales con tu equipo móvil, al terminar los GB asignados existirán cargos adicionales que verás reflejados en tu facturación de servicio."
                              }
                          ]
                     }
