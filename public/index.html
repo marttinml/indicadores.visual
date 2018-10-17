@@ -1,61 +1,38 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="app">
-<head>
-	<meta charset="UTF-8">
-	<title ng-bind="$root.career"></title>
+<!doctype html>
+<html lang="es" ng-app="sample-app" ng-controller="AppController">
 
-	<meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indicadores</title>
 
-    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'> -->
+  <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
 
-    <!-- Style -->
-    <link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/vendor/fullpage.js/jquery.fullPage.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Directives Style -->
-	<link rel="stylesheet" href="app/shared/components/att-header/att-header.style.css">
-	<link rel="stylesheet" href="app/shared/components/att-spin/att-spin.style.css">
-	
-	
-	<!-- Modules Style -->
-	<link rel="stylesheet" href="app/modules/cartera/assets/cartera.style.css">
-</head>
-<body ng-controller="AppController">
-	<!-- Render view -->
-	<div ng-view></div>
 
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/ux-mask-1.3.js"></script>
-	
-	<!-- References angular.js -->
-	<script src="assets/js/angular.min.js"></script>
-	<script src="assets/js/angular-sanitize.js"></script>
-	<script src="assets/js/angular-locale_es-mx.js"></script>
-	<script src="assets/js/angular-route.min.js"></script>
-	<script src="assets/js/angular-resource.min.js"></script>
 
-	<!-- app config -->
-	<script src="app/config/app.module.js"></script>
-	<script src="app/config/app.router.js"></script>
-	<script src="app/config/app.controller.js"></script>
-	<script src="app/config/app.singleton.js"></script>
-	<script src="app/config/app.resourceProvider.js"></script>
+  <main ui-view></main>
 
-	<!-- Modules  -->
-	<script src="app/modules/cartera/controllers/cartera.controller.js"></script>
-	<script src="app/modules/passcode/controllers/passcode.controller.js"></script>
-	<script src="app/modules/recuperar-passcode/controllers/recuperar-passcode.controller.js"></script>
-	
-	<!-- Shared	 -->
-	<!-- Components -->
-	<script src="app/shared/components/att-header/att-header.directive.js"></script>
-	<script src="app/shared/components/att-alert/att-alert.directive.js"></script>
-	<script src="app/shared/components/att-spin/att-spin.directive.js"></script>
+  <script src="assets/js/chart.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/vendor/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+  <script src="assets/vendor/fullpage.js/jquery.fullPage.min.js"></script>
 
-	<!-- Services -->
-	<script src="app/shared/services/bundle.service.js"></script>
-</body>
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="assets/js/angular-fullPage.js"></script>
+
+  <script src="app/app.module.js"></script>
+  <script src="app/app.config.js"></script>
+  <script src="app/app.controller.js"></script>
+  <script src="app/views/main/main.controller.js"></script>
+  <script src="app/views/dynamic/dynamic.controller.js"></script>
+
 </html>

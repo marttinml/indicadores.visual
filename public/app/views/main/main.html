@@ -1,0 +1,153 @@
+<header>
+	<div class="wrapper">
+		<div class="sub-wrapper">
+			<img src="assets/img/LOGO_AT&T.png" alt="" ng-click="$event.stopPropagation();">
+			<span class="label-title">
+				<span>Indicadores Autoservicio</span>
+				<span class="color-disable">v0</span>
+			</span>
+			<span class="align-right label-date"> 
+				<span class="color-disable">Run Date: </span>
+				<span class="color-high">May 27, 2018</span>
+			</span>
+		</div>
+	</div>
+	<ul class="line">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+
+	<div class="tabs">
+		<dib class="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();tabsToggle(tab)">{{tab.title}}</dib>
+	</div>
+
+</header>
+
+
+<div full-page options="vm.mainOptions">
+  	<div class="section">
+		
+		<div class="wrapper-daily">
+				<table class="daily header">
+					<tbody>
+						<tr>
+							<td ng-repeat="row in header  track by $index">{{row}}</td>
+						</tr>
+					</tbody>
+				</table>
+			<div class="title-table f-18">
+					<span class="color-blue">Accesorios</span>
+			</div>
+			<span class="wrapper-table">
+				<table class="daily">
+					<tbody>
+						<tr ng-repeat="row in accesorios.table  track by $index">
+							<td ng-repeat="col in row  track by $index">{{col}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</span>
+			<span class="wrapper-info">
+				<table class="daily">
+					<tbody>
+						<tr ng-repeat="row in accesorios.table  track by $index">
+							<td ng-repeat="col in row  track by $index">{{col}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</span>
+		</div>
+		<div class="wrapper-chart">
+				<canvas id="myChart1"></canvas>
+		</div>
+	</div>
+	<div class="section">
+		<div class="wrapper-daily">
+			<table class="daily header">
+				<tbody>
+					<tr>
+						<td ng-repeat="row in header  track by $index">{{row}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="title-table f-18">
+				<span class="color-blue">Pagos de Factura</span>
+			</div>
+			<span class="wrapper-table">
+				<table class="daily">
+					<tbody>
+						<tr ng-repeat="row in pagoFactura.table  track by $index">
+							<td ng-repeat="col in row  track by $index">{{col}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</span>
+			<span class="wrapper-info">
+				<table class="daily">
+					<tbody>
+						<tr ng-repeat="row in accesorios.table  track by $index">
+							<td ng-repeat="col in row  track by $index">{{col}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</span>
+		</div>
+		<div class="wrapper-chart">
+				<canvas id="myChart2"></canvas>
+		</div>
+	</div>
+	<div class="section">
+		<div class="wrapper-daily">
+			<table class="daily header">
+				<tbody>
+					<tr>
+						<td ng-repeat="row in header  track by $index">{{row}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="title-table f-18">
+					<span class="color-blue">Recargas</span>
+			</div>
+			<span class="wrapper-table">
+				<table class="daily">
+					<tbody>
+						<tr ng-repeat="row in accesorios.table  track by $index">
+							<td ng-repeat="col in row  track by $index">{{col}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</span>
+			<span class="wrapper-info">
+				<table class="daily">
+					<tbody>
+						<tr ng-repeat="row in accesorios.table  track by $index">
+							<td ng-repeat="col in row  track by $index">{{col}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</span>
+		</div>
+		<div class="wrapper-chart">
+				<canvas id="myChart3"></canvas>
+		</div>
+	</div>
+</div>
+
+  
+<footer>
+	<div class="wrapper">
+		<div class="left">
+			<div>Confidental and proprietary information</div>
+			<div>For Internal Use Only</div>
+		</div>
+		<div class="right">
+			<div>AT&T Mexico, LLC.</div>
+			<div><b class="color-disable">DO NOT COPY OR DISTRIBUTE</b></div>
+		</div>
+	</div>
+</footer>
