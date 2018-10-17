@@ -744,7 +744,7 @@ ul.grid-two li:last-child {
         display: block;
     }
     .wrapper-daily {
-        height: 260px;
+        height: 170px;
     }
     .wrapper-monthly {
         height: 470px;
@@ -755,9 +755,23 @@ ul.grid-two li:last-child {
     td{
         padding-left: 2px;
         padding-right: 2px;
-        font-size: 7px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 6px;
     }
     .f-18 {
+        font-size: 12px;
+    }
+    .tabs{
+        margin-top: 0px;
+    }
+    header {
+        height: 95px;
+    }
+    footer{
+        display: none;
+    }
+    .label-title {
         font-size: 12px;
     }
 }
