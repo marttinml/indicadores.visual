@@ -21,7 +21,9 @@
 		<li></li>
 	</ul>
 
-
+	<div class="padding-top-20">
+			Operaciones por:
+	</div>
 	<div class="tabs">
 		<dib class="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();tabsToggle(tab)">{{tab.title}}</dib>
 	</div>
@@ -30,37 +32,122 @@
 
 
 <div full-page options="vm.mainOptions">
+	<div class="section">
+		<div class="item-row">
+			<div class="item-col padding-20 padding-bottom-0">
+				<div class="title-table f-18">
+					<span class="color-blue">Accesos</span>
+				</div>
+			</div>
+		</div>
+		<div class="item-row">
+			<div class="item-col padding-20">
+					<table class="daily">
+							<tbody>
+								<tr class="height-40">
+									<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+								</tr>
+								<tr ng-repeat="row in accesorios.table  track by $index">
+									<td ng-repeat="col in row  track by $index">{{col}}</td>
+								</tr>
+							</tbody>
+						</table>
+			</div>
+			<div class="item-col padding-20 width-50">
+					<div class="wrapper-charts">
+							<canvas id="myChart1"></canvas>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+			<div class="item-row">
+				<div class="item-col padding-20 padding-bottom-0">
+					<div class="title-table f-18">
+						<span class="color-blue">Pagos de Factura</span>
+					</div>
+				</div>
+				</div>
+			<div class="item-row">
+				<div class="item-col  padding-20">
+						<table class="daily">
+								<tbody>
+									<tr class="height-40">
+										<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+									</tr>
+									<tr ng-repeat="row in pagoFactura.table  track by $index">
+										<td ng-repeat="col in row  track by $index">{{col}}</td>
+									</tr>
+								</tbody>
+							</table>
+				</div>
+				<div class="item-col padding-20 width-50">
+						<div class="wrapper-charts">
+								<canvas id="myChart2"></canvas>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+				<div class="item-row">
+					<div class="item-col padding-20 padding-bottom-0">
+						<div class="title-table f-18">
+							<span class="color-blue">Recargas</span>
+						</div>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-col  padding-20">
+							<table class="daily">
+									<tbody>
+										<tr class="height-40">
+											<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+										</tr>
+										<tr ng-repeat="row in recargas.table  track by $index">
+											<td ng-repeat="col in row  track by $index">{{col}}</td>
+										</tr>
+									</tbody>
+								</table>
+					</div>
+					<div class="item-col padding-20 width-50">
+							<div class="wrapper-charts">
+									<canvas id="myChart3"></canvas>
+							</div>
+					</div>
+				</div>
+			</div>
+</div>
+<!-- <div full-page options="vm.mainOptions">
   	<div class="section">
 		
 		<div class="wrapper-daily">
-				<table class="daily header">
-					<tbody>
-						<tr>
-							<td ng-repeat="row in header  track by $index">{{row}}</td>
-						</tr>
-					</tbody>
-				</table>
-			<div class="title-table f-18">
-					<span class="color-blue">Accesorios</span>
-			</div>
-			<span class="wrapper-table">
-				<table class="daily">
-					<tbody>
-						<tr ng-repeat="row in accesorios.table  track by $index">
-							<td ng-repeat="col in row  track by $index">{{col}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</span>
-			<span class="wrapper-info">
-				<table class="daily">
-					<tbody>
-						<tr ng-repeat="row in accesorios.table  track by $index">
-							<td ng-repeat="col in row  track by $index">{{col}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</span>
+				<div class="title-table f-18">
+						<span class="color-blue">Accesos</span>
+				</div>
+				<span class="wrapper-table">
+					<table class="daily">
+						<tbody>
+							<tr class="height-40">
+								<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+							</tr>
+							<tr ng-repeat="row in accesorios.table  track by $index">
+								<td ng-repeat="col in row  track by $index">{{col}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</span>
+				<span class="wrapper-info">
+					<table class="daily">
+						<tbody>
+							<tr class="height-40">
+								<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+							</tr>
+							<tr ng-repeat="row in accesorios.table  track by $index">
+								<td ng-repeat="col in row  track by $index">{{col}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</span>
 		</div>
 		<div class="wrapper-chart">
 				<canvas id="myChart1"></canvas>
@@ -68,19 +155,15 @@
 	</div>
 	<div class="section">
 		<div class="wrapper-daily">
-			<table class="daily header">
-				<tbody>
-					<tr>
-						<td ng-repeat="row in header  track by $index">{{row}}</td>
-					</tr>
-				</tbody>
-			</table>
 			<div class="title-table f-18">
 				<span class="color-blue">Pagos de Factura</span>
 			</div>
 			<span class="wrapper-table">
 				<table class="daily">
 					<tbody>
+						<tr>
+							<td ng-repeat="row in header  track by $index">{{row}}</td>
+						</tr>
 						<tr ng-repeat="row in pagoFactura.table  track by $index">
 							<td ng-repeat="col in row  track by $index">{{col}}</td>
 						</tr>
@@ -136,7 +219,7 @@
 				<canvas id="myChart3"></canvas>
 		</div>
 	</div>
-</div>
+</div> -->
 
   
 <footer>

@@ -70,7 +70,7 @@ input{
     position: relative;
     padding: 20px;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 5%;
     padding-top: 160px;
 } */
 header{
@@ -264,8 +264,8 @@ ul.line li:nth-child(6){
 }
 
 .wrapper-daily{
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     position: relative;
     height: 400px;
 }
@@ -282,6 +282,10 @@ ul.line li:nth-child(6){
     height: 652px;
 }
 
+.height-40{
+    height: 40px;
+}
+
 .wrapper-consmonthly .wrapper-info,
 .wrapper-consmonthly .wrapper-table,
 .wrapper-monthly .wrapper-info,
@@ -290,7 +294,7 @@ ul.line li:nth-child(6){
 .wrapper-daily .wrapper-info{
     position: fixed;
     left: 10%;
-    right: 10%;
+    right: 5%;
     opacity: 0;
 }
 .wrapper-consmonthly .wrapper-table .title-table,
@@ -382,7 +386,7 @@ table.daily tr td.text-left{
 .wrapper-chart{
     height: 200px;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 
@@ -449,6 +453,10 @@ float: right;
     font-size: 14px;
 }
 
+
+table.daily tr td.line-bottom-2{
+    border-bottom: 2px solid rgb(224,224,224);
+}
 .title-table{
     font-family: PoppinsLight, 'Times New Roman';
     text-align: left;
@@ -489,20 +497,20 @@ ul.grid-two li:last-child {
     animation-fill-mode: forwards;
 }
 @-webkit-keyframes leftin0 {
-    to {left: 10%; right: 10%; opacity: 0;}
-    from {left: 10%;right: 10%; opacity: 1;}
+    to {left: 10%; right: 5%; opacity: 0;}
+    from {left: 10%;right: 5%; opacity: 1;}
 }
 @keyframes leftin0 {
-    to {left: 10%; right: 10%; opacity: 0;}
-    from {left: 10%;right: 10%; opacity: 1;}
+    to {left: 10%; right: 5%; opacity: 0;}
+    from {left: 10%;right: 5%; opacity: 1;}
 }
 @-webkit-keyframes rightin0 {
     to {left: 50%; right: -20%; opacity: 0;}
-    from {left: 10%;right: 10%; opacity: 1;}
+    from {left: 10%;right: 5%; opacity: 1;}
 }
 @keyframes rightin0 {
     to {left: 50%; right: -20%; opacity: 0;}
-    from {left: 10%;right: 10%; opacity: 1;}
+    from {left: 10%;right: 5%; opacity: 1;}
 }
 .fp-section.active .wrapper-daily .wrapper-table{ 
     -webkit-animation-name: leftout0; 
@@ -522,20 +530,20 @@ ul.grid-two li:last-child {
     animation-delay: 1s;
 }
 @-webkit-keyframes leftout0 {
-    from {left: 10%; right: 10%; opacity: 0;}
-    to {left: 10%;right: 10%; opacity: 1;}
+    from {left: 10%; right: 5%; opacity: 0;}
+    to {left: 10%;right: 5%; opacity: 1;}
 }
 @keyframes leftout0 {
-    from {left: 10%; right: 10%; opacity: 0;}
-    to {left: 10%;right: 10%; opacity: 1;}
+    from {left: 10%; right: 5%; opacity: 0;}
+    to {left: 10%;right: 5%; opacity: 1;}
 }
 @-webkit-keyframes rightout0 {
     from {left: 50%; right: -30%; opacity: 0;}
-    to {left: 10%;right: 10%; opacity: 1;}
+    to {left: 10%;right: 5%; opacity: 1;}
 }
 @keyframes rightout0 {
     from {left: 50%; right: -30%; opacity: 0;}
-    to {left: 10%;right: 10%; opacity: 1;}
+    to {left: 10%;right: 5%; opacity: 1;}
 }
 
 
@@ -557,6 +565,7 @@ ul.grid-two li:last-child {
     animation-duration: 1s;    
     animation-fill-mode: forwards;
 }
+
 @-webkit-keyframes leftin1 {
     to {left: 5%; right: 5%; opacity: 0;}
     from {left: 5%;right: 5%; opacity: 1;}
@@ -678,6 +687,33 @@ ul.grid-two li:last-child {
 
 
 
+.item-row{
+    display: table;
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+
+}
+.item-col{
+    display: table-cell;
+    vertical-align: top;
+}
+.padding-20{
+    padding: 20px;
+}
+.padding-top-20{
+    padding-top: 20px;
+}
+.width-50{
+    width: 50%;
+}
+.wrapper-charts{
+    border: 1px solid rgb(224,224,224);
+    height: 370px;
+}
+.padding-bottom-0{
+    padding-bottom: 0px;
+}
 
 
 @media (max-width: 1200px) {
@@ -783,9 +819,3 @@ ul.grid-two li:last-child {
         display: none;
     }
 }
-
-
-
-
-
-
