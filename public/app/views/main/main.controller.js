@@ -80,9 +80,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#CAA2DD',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -90,9 +91,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#9063CD',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -100,9 +102,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#71C5E8',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -110,9 +113,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#0568AE',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -120,9 +124,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#FFB81C',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -130,9 +135,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#EA7400',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -156,9 +162,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#CAA2DD',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -166,9 +173,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#9063CD',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -176,9 +184,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#71C5E8',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -186,9 +195,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#0568AE',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -196,9 +206,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#FFB81C',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -206,9 +217,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#EA7400',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -234,9 +246,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#CAA2DD',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -244,9 +257,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#9063CD',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -254,9 +268,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#71C5E8',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -264,9 +279,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#0568AE',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -274,9 +290,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#FFB81C',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -284,9 +301,10 @@
             backgroundColor: '#ffffff',
             pointRadius: 4,
             pointBorderWidth: 2,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#EA7400',
             data: [],
+            hidden: true
           },
           {
             fill: false,
@@ -362,11 +380,29 @@
       }else{
         newChart[0] = chart[chart.length - 1];
       }
-      $scope.factoryBar(newChart, 'myChart1');
+      $scope.factoryLine(newChart, 'myChart1');
     };
    
 
-    $scope.factoryBar = function(obj, id){
+    $scope.factoryLine = function(obj, id){
+
+      // var defaultLegendClickHandler = Chart.defaults.global.legend.onClick;
+      // var newLegendClickHandler = function (e, legendItem) {
+      //   var index = legendItem.datasetIndex;
+
+      //   if (index > 1) {
+      //       // Do the original logic
+      //       defaultLegendClickHandler(e, legendItem);
+      //   } else {
+      //       let ci = this.chart;
+      //       [ci.getDatasetMeta(0),
+      //         ci.getDatasetMeta(1)].forEach(function(meta) {
+      //           meta.hidden = meta.hidden === null? !ci.data.datasets[index].hidden : null;
+      //       });
+      //       ci.update();
+      //   }
+      // };
+
       var ctx = document.getElementById(id).getContext('2d');
           Chart.defaults.global.defaultFontSize = 8;
           $scope.chart && $scope.chart.destroy();
@@ -382,10 +418,20 @@
 
           // Configuration options go here
           options: {
+            legendCallback: function(chart) {
+              // Return the HTML string here.
+          console.log(chart);
+            },
               responsive: true, 
               maintainAspectRatio: false, 
               legend: {
-                  display: true
+                  display: true,
+                  labels: {
+                      // fontColor: 'rgb(255, 99, 132)'
+                      boxWidth: 10,
+                      boxHeight: 20
+
+                  }
               },
               scales: {
                   yAxes: [{
@@ -398,6 +444,47 @@
           }
       });
   };
+
+  $scope.factoryBar = function(obj, id){
+    var ctx = document.getElementById(id).getContext('2d');
+        Chart.defaults.global.defaultFontSize = 8;
+        $scope.chart && $scope.chart.destroy();
+        $scope.chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+            datasets: obj
+        },
+
+        // Configuration options go here
+        options: {
+            responsive: true, 
+            maintainAspectRatio: false, 
+            legend: {
+                display: true
+            },
+            // scales: {
+            //     yAxes: [{
+            //         ticks: {
+            //             beginAtZero:true
+            //         }
+            //     }]
+            // },
+            scales: {
+              xAxes: [{
+                stacked: true,
+              }],
+              yAxes: [{
+                stacked: true
+              }]
+            }
+
+        }
+    });
+};
 
   $scope.preFactory();
     // $scope.factoryBar($scope.accesorios.chart,  'myChart1');
