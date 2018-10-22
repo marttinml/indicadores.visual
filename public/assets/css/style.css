@@ -69,7 +69,7 @@ input{
 	height:100vh;
     position: relative;
     padding: 20px;
-    padding-left: 10%;
+    padding-left: 5%;
     padding-right: 5%;
     padding-top: 160px;
 } */
@@ -77,15 +77,13 @@ header{
 	height: 120px;
     width: 100%;
     font-size: 14px;
-    padding-left: 5%;
-    padding-right: 5%;
     position: fixed;
     z-index: 2;
     background-color: rgba(255,255,255.9);
 }
 header .wrapper{
-    padding-left: 100px;
-    padding-right: 100px; 
+    padding-left: 5%;
+    padding-right: 5%;
 }
 header .sub-wrapper{
     padding-top: 20px;
@@ -293,7 +291,7 @@ ul.line li:nth-child(6){
 .wrapper-daily .wrapper-table,
 .wrapper-daily .wrapper-info{
     position: fixed;
-    left: 10%;
+    left: 5%;
     right: 5%;
     opacity: 0;
 }
@@ -384,31 +382,40 @@ table.daily tr td.text-left{
 }
 
 .wrapper-chart{
-    height: 200px;
-    padding-left: 10%;
-    padding-right: 5%;
-}
-
-
-footer{
+    height: 300px;
+    padding-top: 10px;
     padding-left: 5%;
     padding-right: 5%;
+    width: 90%;
     position: fixed;
+    left:5%;
+    right:5%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
     bottom: 0;
-    height: 80px;
-    width: 100%;
-    color: rgba(0,0,0,.38);
+    transition: .3s;
     background-color: rgb(255,255,255);
-}   
-footer .wrapper{
-    border-top: 1px solid rgb(225,225,225);
-    padding-top: 20px;
 }
-footer .left{
-float: left;
+.wrapper-chart.chartDisplayAll{
+    height: calc(100vh - 167px);
+    transition: .3s;
 }
-footer .right{
-float: right;
+.wrapper-chart.chartDisplayAll .icon-arrow{
+    transform: rotate(180deg);
+    transition: .3s;
+
+}
+
+.wrapper-chart-inner{
+    height: 230px;
+}
+.wrapper-chart.chartDisplayAll .wrapper-chart-inner{
+    height: calc(100vh - 250px);
+}
+.fp-tableCell {
+    vertical-align: top;
+    padding-top: 130px;
 }
 
 
@@ -451,6 +458,10 @@ float: right;
 }
 .f-14{
     font-size: 14px;
+}
+
+.height-30{
+    height: 30px;
 }
 
 
@@ -497,20 +508,20 @@ ul.grid-two li:last-child {
     animation-fill-mode: forwards;
 }
 @-webkit-keyframes leftin0 {
-    to {left: 10%; right: 5%; opacity: 0;}
-    from {left: 10%;right: 5%; opacity: 1;}
+    to {left: 5%; right: 5%; opacity: 0;}
+    from {left: 5%;right: 5%; opacity: 1;}
 }
 @keyframes leftin0 {
-    to {left: 10%; right: 5%; opacity: 0;}
-    from {left: 10%;right: 5%; opacity: 1;}
+    to {left: 5%; right: 5%; opacity: 0;}
+    from {left: 5%;right: 5%; opacity: 1;}
 }
 @-webkit-keyframes rightin0 {
     to {left: 50%; right: -20%; opacity: 0;}
-    from {left: 10%;right: 5%; opacity: 1;}
+    from {left: 5%;right: 5%; opacity: 1;}
 }
 @keyframes rightin0 {
     to {left: 50%; right: -20%; opacity: 0;}
-    from {left: 10%;right: 5%; opacity: 1;}
+    from {left: 5%;right: 5%; opacity: 1;}
 }
 .fp-section.active .wrapper-daily .wrapper-table{ 
     -webkit-animation-name: leftout0; 
@@ -530,20 +541,20 @@ ul.grid-two li:last-child {
     animation-delay: 1s;
 }
 @-webkit-keyframes leftout0 {
-    from {left: 10%; right: 5%; opacity: 0;}
-    to {left: 10%;right: 5%; opacity: 1;}
+    from {left: 5%; right: 5%; opacity: 0;}
+    to {left: 5%;right: 5%; opacity: 1;}
 }
 @keyframes leftout0 {
-    from {left: 10%; right: 5%; opacity: 0;}
-    to {left: 10%;right: 5%; opacity: 1;}
+    from {left: 5%; right: 5%; opacity: 0;}
+    to {left: 5%;right: 5%; opacity: 1;}
 }
 @-webkit-keyframes rightout0 {
     from {left: 50%; right: -30%; opacity: 0;}
-    to {left: 10%;right: 5%; opacity: 1;}
+    to {left: 5%;right: 5%; opacity: 1;}
 }
 @keyframes rightout0 {
     from {left: 50%; right: -30%; opacity: 0;}
-    to {left: 10%;right: 5%; opacity: 1;}
+    to {left: 5%;right: 5%; opacity: 1;}
 }
 
 
@@ -609,7 +620,7 @@ ul.grid-two li:last-child {
 }
 @-webkit-keyframes rightout1 {
     from {left: 50%; right: -30%; opacity: 0;}
-    to {left: 10%;right: 5%; opacity: 1;}
+    to {left: 5%;right: 5%; opacity: 1;}
 }
 @keyframes rightout1 {
     from {left: 50%; right: -30%; opacity: 0;}
@@ -692,11 +703,12 @@ ul.grid-two li:last-child {
     width: 100%;
     padding-right: 5%;
     padding-left: 5%;
-
+    min-height: 40px;
 }
 .item-col{
     display: table-cell;
-    vertical-align: top;
+    vertical-align: middle;
+    text-align: center;
 }
 .padding-20{
     padding: 20px;
@@ -713,6 +725,22 @@ ul.grid-two li:last-child {
 }
 .padding-bottom-0{
     padding-bottom: 0px;
+}
+
+i.icon{
+    display: inline-block;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+i.icon-arrow{
+    transition: .3s;
+    height: 20px;
+    width: 30px;
+    margin: 10px;
+    background-image: url(../img/icon.arrow.gray.svg)
+}
+i.icon-arrow:hover{
+    background-image: url(../img/icon.arrow.blue.svg)
 }
 
 
@@ -804,18 +832,12 @@ ul.grid-two li:last-child {
     header {
         height: 95px;
     }
-    footer{
-        display: none;
-    }
     .label-title {
         font-size: 12px;
     }
 }
 @media (max-height: 500px) {
     header{
-        display: none;
-    }
-    footer{
         display: none;
     }
 }

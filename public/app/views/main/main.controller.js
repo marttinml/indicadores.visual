@@ -313,13 +313,27 @@
       return isNaN(val);
   }
 
+  $scope.chartDisplayAll = false;
+  $scope.toggleChart = function(){
+    !$scope.chartDisplayAll ? $scope.full() : $scope.min();
+  };
+  $scope.full = function(){
+    $scope.chartDisplayAll = true;
+    $scope.preFactory();
+  };
+  $scope.min = function(){
+    $scope.chartDisplayAll = false;
+    $scope.preFactory();
+  };
+
+    $scope.pageIndex = 0;
     this.mainOptions = {
       sectionsColor: ['rgb(255,255,255)', 'rgb(255,255,255)', 'rgb(255,255,255)'],
       navigation: true,
       scrollingSpeed: 1000,
       change: (page, next) => {
-       
-
+       $scope.pageIndex = next - 1;
+       $scope.preFactory();
       }
     };
 
@@ -331,12 +345,32 @@
     $scope.parseChart($scope.accesorios);
     $scope.parseChart($scope.pagoFactura);
     $scope.parseChart($scope.recargas);
+
+
+
+    $scope.preFactory = function(){
+      var chart = [];
+      var newChart = [];
+      switch($scope.pageIndex){
+        case 0: chart = $scope.accesorios.chart; break;
+        case 1: chart = $scope.pagoFactura.chart; break;
+        case 2: chart = $scope.recargas.chart; break;
+      };
+
+      if($scope.chartDisplayAll){
+        newChart = chart;
+      }else{
+        newChart[0] = chart[chart.length - 1];
+      }
+      $scope.factoryBar(newChart, 'myChart1');
+    };
    
 
     $scope.factoryBar = function(obj, id){
       var ctx = document.getElementById(id).getContext('2d');
           Chart.defaults.global.defaultFontSize = 8;
-          var chart = new Chart(ctx, {
+          $scope.chart && $scope.chart.destroy();
+          $scope.chart = new Chart(ctx, {
           // The type of chart we want to create
           type: 'line',
 
@@ -365,9 +399,10 @@
       });
   };
 
-    $scope.factoryBar($scope.accesorios.chart,  'myChart1');
-    $scope.factoryBar($scope.pagoFactura.chart, 'myChart2');
-    $scope.factoryBar($scope.recargas.chart,    'myChart3');
+  $scope.preFactory();
+    // $scope.factoryBar($scope.accesorios.chart,  'myChart1');
+    // $scope.factoryBar($scope.pagoFactura.chart, 'myChart2');
+    // $scope.factoryBar($scope.recargas.chart,    'myChart3');
 
     $scope.tabs = [
       { title: "Canal", active: true, jsons: {
@@ -394,11 +429,14 @@
       $scope.parseChart($scope.pagoFactura);
       $scope.parseChart($scope.recargas);
 
-      $scope.factoryBar($scope.accesorios.chart,  'myChart1');
-      $scope.factoryBar($scope.pagoFactura.chart, 'myChart2');
-      $scope.factoryBar($scope.recargas.chart,    'myChart3');
+      $scope.preFactory();
+      // $scope.factoryBar($scope.accesorios.chart,  'myChart1');
+      // $scope.factoryBar($scope.pagoFactura.chart, 'myChart2');
+      // $scope.factoryBar($scope.recargas.chart,    'myChart3');
 
     };
+
+
 
   }
 
