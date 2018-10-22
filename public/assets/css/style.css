@@ -392,7 +392,7 @@ table.daily tr td.text-left{
     right:5%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    box-shadow: 0 0 20px rgba(0,0,0,3);
     bottom: 0;
     transition: .3s;
     background-color: rgb(255,255,255);
