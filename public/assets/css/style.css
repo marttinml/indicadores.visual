@@ -335,7 +335,11 @@ b{
     color: rgba(0,0,0,.87);
     font-family: 'PoppinsBold', 'Times New Roman';
 }
-table.daily tr:last-child td{
+/* table.daily tr:last-child td{
+    font-weight: bold;
+    background-color: rgb(245,245,245);
+} */
+table.daily tr.last-child td{
     font-weight: bold;
     background-color: rgb(245,245,245);
 }

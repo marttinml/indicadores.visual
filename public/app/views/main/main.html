@@ -35,7 +35,7 @@
 							<tr class="height-40">
 								<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
 							</tr>
-							<tr ng-repeat="row in accesorios.table  track by $index">
+							<tr ng-repeat="row in accesorios.table  track by $index" ng-class="{'last-child': $last}">
 								<td ng-repeat="col in row  track by $index">{{col}}</td>
 							</tr>
 						</tbody>
@@ -66,7 +66,7 @@
 						<tr class="height-40">
 							<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
 						</tr>
-						<tr ng-repeat="row in pagoFactura.table  track by $index">
+						<tr ng-repeat="row in pagoFactura.table  track by $index" ng-class="{'last-child': $last}">
 							<td ng-repeat="col in row  track by $index">{{col}}</td>
 						</tr>
 					</tbody>
@@ -97,7 +97,7 @@
 						<tr class="height-40">
 							<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
 						</tr>
-						<tr ng-repeat="row in accesorios.table  track by $index">
+						<tr ng-repeat="row in accesorios.table  track by $index" ng-class="{'last-child': $last}">
 							<td ng-repeat="col in row  track by $index">{{col}}</td>
 						</tr>
 					</tbody>

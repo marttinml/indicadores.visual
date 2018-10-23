@@ -5,327 +5,22 @@
     .module('sample-app')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$state', '$scope'];
+  MainController.$inject = ['$state', '$scope', '$http'];
 
-  function MainController($state, $scope){
+  function MainController($state, $scope, $http){
 
     var _this = this;
 
 
-
-
-
     $scope.header = ['Canal','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    $http.get("../../../1.json").success(function (data) { $scope.canalAccesorios = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../2.json").success(function (data) { $scope.canalPagoFactura = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../3.json").success(function (data) { $scope.canalRecargas = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../4.json").success(function (data) { $scope.plataformaAccesorios = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../5.json").success(function (data) { $scope.plataformaPagoFactura = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../6.json").success(function (data) { $scope.plataformaRecargas = data; }).error(function (data) {console.log("there was an error"); });
 
-    $scope.canalAccesorios = [
-      ['IVR Visual'     ,'0', '1',  '0',  '17', '0',  '2',  '9',  '0',  '0',  '24', '0',  '41'],
-      ['IVR Voz'        ,'8', '2',  '0',  '0',  '7',  '4',  '0',  '0',  '3',  '0',  '0',  '13'],
-      ['Mi AT&T Móvil'  ,'0', '3',  '84', '26', '0',  '0',  '5',  '0',  '0',  '0',  '34', '0'],
-      ['Mi AT&T Web'    ,'0', '4',  '0',  '0',  '0',  '8',  '0',  '34', '0',  '0',  '0',  '0'],
-      ['Mi Unefon Móvil','23','5',  '4',  '0',  '13', '10', '0',  '7',  '16', '0',  '3',  '7'],
-      ['Mi Unefon Web'  ,'0', '97', '7',  '24', '0',  '12', '41', '0',  '0',  '64', '12', '0'],
-      ['Total'          ,'31','124','95', '67', '20', '36', '55', '41', '19', '88', '49', '61']
-    ];
 
-      $scope.canalPagoFactura = [
-        ['IVR Visual'     ,'0','1','0','17','0','2','0','0','0','24','0','41'],
-        ['IVR Voz'        ,'0','2','0','0','7','4','0','0','0','0','0','13'],
-        ['Mi AT&T Móvil'  ,'0','3','84','26','0','0','0','0','0','0','34','0'],
-        ['Mi AT&T Web'    ,'0','4','0','0','0','8','0','34','0','0','0','0'],
-        ['Mi Unefon Móvil','23','5','4','0','0','10','0','0','16','0','0','0'],
-        ['Mi Unefon Web'  ,'0','97','0','24','0','12','41','0','0','64','12','0'],
-        ['Total'          ,'0','7','0','0','0','56','7','0','0','16','0','0']
-      ];
-
-      $scope.canalRecargas = [
-        ['IVR Visual'     ,'0','1','0','17','0','2','0','0','0','24','0','41'],
-        ['IVR Voz'        ,'0','2','0','0','0','4','0','0','0','0','0','13'],
-        ['Mi AT&T Móvil'  ,'0','3','84','26','0','7','0','0','7','0','34','0'],
-        ['Mi AT&T Web'    ,'0','4','0','7','0','8','0','34','0','0','7','0'],
-        ['Mi Unefon Móvil','23','5','4','0','0','10','0','0','16','0','0','0'],
-        ['Mi Unefon Web'  ,'0','97','0','24','0','12','41','0','7','64','12','0'],
-        ['Total'          ,'0','7','0','0','0','56','0','0','0','16','0','0']
-      ];
-
-      $scope.plataformaAccesorios = [
-        ['Aul'     ,'0','1','0','17','0','2','0','0','0','24','0','41'],
-        ['Rojo'        ,'0','2','0','0','0','4','0','0','0','0','0','13'],
-        ['Amarillo'  ,'0','3','84','26','0','7','0','0','0','7','34','0'],
-        ['Naranja'    ,'0','4','0','0','0','8','0','34','7','0','0','0'],
-        ['Total','23','5','4','7','0','10','0','0','16','0','0','0']
-      ];
-  
-        $scope.plataformaPagoFactura = [
-          ['Aul'     ,'0','1','0','17','0','2','0','0','0','24','0','41'],
-          ['Rojo'        ,'0','2','0','0','0','4','0','0','0','0','0','13'],
-          ['Amarillo'  ,'0','3','84','26','0','7','0','0','0','0','34','0'],
-          ['Naranja'    ,'0','4','0','0','0','8','0','34','0','0','0','0'],
-          ['Total','23','5','4','0','0','10','0','0','16','0','0','0']
-        ];
-  
-        $scope.plataformaRecargas = [
-          ['Aul'     ,'0','1','0','17','0','2','0','0','0','24','0','41'],
-          ['Rojo'        ,'0','2','0','0','0','4','0','0','0','0','0','13'],
-          ['Amarillo'  ,'0','3','84','26','0','0','7','0','0','7','34','0'],
-          ['Naranja'    ,'0','4','0','0','0','8','0','34','0','0','0','0'],
-          ['Total','23','5','4','7','0','10','0','0','16','0','0','0']
-        ];
-
-    $scope.accesorios = { 
-      table: $scope.canalAccesorios,
-        chart:[
-          {
-            fill: false,
-            label: "IVR Visual",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#CAA2DD',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "IVR Voz",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#9063CD',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi AT&T Móvil",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#71C5E8',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi AT&T Web",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#0568AE',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi Unefon Móvil",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#FFB81C',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi Unefon Web",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#EA7400',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Total",
-            backgroundColor: '#009FDB',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 2,
-            borderColor: '#009FDB',
-            data: []
-          }
-      ] 
-    };
-
-    $scope.pagoFactura = { 
-      table: $scope.canalPagoFactura,
-        chart:[
-          {
-            fill: false,
-            label: "IVR Visual",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#CAA2DD',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "IVR Voz",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#9063CD',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi AT&T Móvil",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#71C5E8',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi AT&T Web",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#0568AE',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi Unefon Móvil",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#FFB81C',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi Unefon Web",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#EA7400',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Total",
-            backgroundColor: '#009FDB',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 2,
-            borderColor: '#009FDB',
-            data: []
-          }
-      ] 
-    };
-
-    
-
-    $scope.recargas = { 
-      table: $scope.canalRecargas,
-        chart:[
-          {
-            fill: false,
-            label: "IVR Visual",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#CAA2DD',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "IVR Voz",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#9063CD',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi AT&T Móvil",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#71C5E8',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi AT&T Web",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#0568AE',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi Unefon Móvil",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#FFB81C',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Mi Unefon Web",
-            backgroundColor: '#ffffff',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 1,
-            borderColor: '#EA7400',
-            data: [],
-            hidden: true
-          },
-          {
-            fill: false,
-            label: "Total",
-            backgroundColor: '#009FDB',
-            pointRadius: 4,
-            pointBorderWidth: 2,
-            borderWidth: 2,
-            borderColor: '#009FDB',
-            data: []
-          }
-      ] 
-    };
-
-    
-
-  var titles = [
-    {of:"May 26, 2018", to:"" },
-    {of:"May 01, 2018", to:"May 26, 2018" },
-    {of:"May 01, 2018", to:"May 26, 2018" },
-  ]
 
   this.isString = function(val){
       return isNaN(val);
@@ -360,11 +55,6 @@
             obj.chart[i].data = obj.table[i].slice(1);
       }
     };
-    $scope.parseChart($scope.accesorios);
-    $scope.parseChart($scope.pagoFactura);
-    $scope.parseChart($scope.recargas);
-
-
 
     $scope.preFactory = function(){
       var chart = [];
@@ -381,27 +71,12 @@
         newChart[0] = chart[chart.length - 1];
       }
       $scope.factoryLine(newChart, 'myChart1');
+      // $scope.factoryBar(newChart, 'myChart1');
+
     };
    
 
     $scope.factoryLine = function(obj, id){
-
-      // var defaultLegendClickHandler = Chart.defaults.global.legend.onClick;
-      // var newLegendClickHandler = function (e, legendItem) {
-      //   var index = legendItem.datasetIndex;
-
-      //   if (index > 1) {
-      //       // Do the original logic
-      //       defaultLegendClickHandler(e, legendItem);
-      //   } else {
-      //       let ci = this.chart;
-      //       [ci.getDatasetMeta(0),
-      //         ci.getDatasetMeta(1)].forEach(function(meta) {
-      //           meta.hidden = meta.hidden === null? !ci.data.datasets[index].hidden : null;
-      //       });
-      //       ci.update();
-      //   }
-      // };
 
       var ctx = document.getElementById(id).getContext('2d');
           Chart.defaults.global.defaultFontSize = 8;
@@ -466,13 +141,6 @@
             legend: {
                 display: true
             },
-            // scales: {
-            //     yAxes: [{
-            //         ticks: {
-            //             beginAtZero:true
-            //         }
-            //     }]
-            // },
             scales: {
               xAxes: [{
                 stacked: true,
@@ -486,23 +154,6 @@
     });
 };
 
-  $scope.preFactory();
-    // $scope.factoryBar($scope.accesorios.chart,  'myChart1');
-    // $scope.factoryBar($scope.pagoFactura.chart, 'myChart2');
-    // $scope.factoryBar($scope.recargas.chart,    'myChart3');
-
-    $scope.tabs = [
-      { title: "Canal", active: true, jsons: {
-        accesorios: $scope.canalAccesorios,
-        pagoFactura: $scope.canalPagoFactura,
-        recargas: $scope.canalRecargas
-      } },
-      { title: "Plataforma", active: false, jsons: {
-        accesorios: $scope.plataformaAccesorios,
-        pagoFactura: $scope.plataformaPagoFactura,
-        recargas: $scope.plataformaRecargas
-      }}
-    ];
     $scope.tabsToggle = function(tab){
       for(var i in $scope.tabs){
         $scope.tabs[i].active = false;
@@ -517,13 +168,281 @@
       $scope.parseChart($scope.recargas);
 
       $scope.preFactory();
-      // $scope.factoryBar($scope.accesorios.chart,  'myChart1');
-      // $scope.factoryBar($scope.pagoFactura.chart, 'myChart2');
-      // $scope.factoryBar($scope.recargas.chart,    'myChart3');
 
     };
 
+    $scope.init = function(){
 
+      $scope.accesorios = { 
+        table: $scope.canalAccesorios,
+          chart:[
+            {
+              fill: false,
+              label: "IVR Visual",
+              backgroundColor: '#CAA2DD',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#CAA2DD',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "IVR Voz",
+              backgroundColor: '#9063CD',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#9063CD',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi AT&T Móvil",
+              backgroundColor: '#71C5E8',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#71C5E8',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi AT&T Web",
+              backgroundColor: '#0568AE',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#0568AE',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi Unefon Móvil",
+              backgroundColor: '#FFB81C',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#FFB81C',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi Unefon Web",
+              backgroundColor: '#EA7400',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#EA7400',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Total",
+              backgroundColor: '#009FDB',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 2,
+              borderColor: '#009FDB',
+              data: []
+            }
+        ] 
+      };
+  
+      $scope.pagoFactura = { 
+        table: $scope.canalPagoFactura,
+          chart:[
+            {
+              fill: false,
+              label: "IVR Visual",
+              backgroundColor: '#CAA2DD',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#CAA2DD',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "IVR Voz",
+              backgroundColor: '#9063CD',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#9063CD',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi AT&T Móvil",
+              backgroundColor: '#71C5E8',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#71C5E8',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi AT&T Web",
+              backgroundColor: '#0568AE',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#0568AE',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi Unefon Móvil",
+              backgroundColor: '#FFB81C',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#FFB81C',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi Unefon Web",
+              backgroundColor: '#009FDB',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#009FDB',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Total",
+              backgroundColor: '#009FDB',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 2,
+              borderColor: '#009FDB',
+              data: []
+            }
+        ] 
+      };
+      $scope.recargas = { 
+        table: $scope.canalRecargas,
+          chart:[
+            {
+              fill: false,
+              label: "IVR Visual",
+              backgroundColor: '#CAA2DD',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#CAA2DD',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "IVR Voz",
+              backgroundColor: '#9063CD',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#9063CD',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi AT&T Móvil",
+              backgroundColor: '#71C5E8',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#71C5E8',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi AT&T Web",
+              backgroundColor: '#0568AE',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#0568AE',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi Unefon Móvil",
+              backgroundColor: '#EA7400',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#EA7400',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Mi Unefon Web",
+              backgroundColor: '#EA7400',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 1,
+              borderColor: '#EA7400',
+              data: [],
+              hidden: true
+            },
+            {
+              fill: false,
+              label: "Total",
+              backgroundColor: '#009FDB',
+              pointRadius: 4,
+              pointBorderWidth: 2,
+              borderWidth: 2,
+              borderColor: '#009FDB',
+              data: []
+            }
+        ] 
+      };
+
+      $scope.tabs = [
+        { title: "Canal", active: true, jsons: {
+          accesorios: $scope.canalAccesorios,
+          pagoFactura: $scope.canalPagoFactura,
+          recargas: $scope.canalRecargas
+        } },
+        { title: "Plataforma", active: false, jsons: {
+          accesorios: $scope.plataformaAccesorios,
+          pagoFactura: $scope.plataformaPagoFactura,
+          recargas: $scope.plataformaRecargas
+        }}
+      ];
+      
+      $scope.parseChart($scope.accesorios);
+      $scope.parseChart($scope.pagoFactura);
+      $scope.parseChart($scope.recargas);
+      $scope.preFactory();
+    };
+
+
+
+    setTimeout(function(){
+      $scope.init();
+      $scope.$apply();
+    },500);
 
   }
 
