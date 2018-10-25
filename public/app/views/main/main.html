@@ -22,110 +22,95 @@
 
 </header>
 
-<div full-page options="vm.mainOptions">
-  	<div class="section">
-		
-		<div class="wrapper-daily">
-				<div class="title-table f-18 height-30">
-						<span class="color-blue">Accesos</span>
-				</div>
-				<span class="wrapper-table">
-					<table class="daily">
-						<tbody>
-							<tr class="height-40">
-								<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-							</tr>
-							<tr ng-repeat="row in accesorios.table  track by $index" ng-class="{'last-child': $last}">
-								<td ng-repeat="col in row  track by $index">{{col}}</td>
-							</tr>
-						</tbody>
-					</table>
-				</span>
-				<span class="wrapper-info">
-					<table class="daily">
-						<tbody>
-							<tr class="height-40">
-								<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-							</tr>
-							<tr ng-repeat="row in accesorios.table  track by $index">
-								<td ng-repeat="col in row  track by $index">{{col}}</td>
-							</tr>
-						</tbody>
-					</table>
-				</span>
-		</div>
+
+
+
+<div ng-show="tabs[0].active">
+	<br>
+	<br>
+	<br>
+	<div class="item-row">
+		<div class="item-col"><h2 class="color-blue t-left">Accesos</h2></div>
 	</div>
-	<div class="section">
-		<div class="wrapper-daily">
-			<div class="title-table f-18 height-30">
-				<span class="color-blue">Pagos de Factura</span>
-			</div>
-			<span class="wrapper-table">
-				<table class="daily">
-					<tbody>
-						<tr class="height-40">
-							<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-						</tr>
-						<tr ng-repeat="row in pagoFactura.table  track by $index" ng-class="{'last-child': $last}">
-							<td ng-repeat="col in row  track by $index">{{col}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</span>
-			<span class="wrapper-info">
-				<table class="daily">
-					<tbody>
-							<tr class="height-40">
-								<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-							</tr>
-						<tr ng-repeat="row in pagoFactura.table  track by $index">
-							<td ng-repeat="col in row  track by $index">{{col}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</span>
-		</div>
+	<table class="daily">
+		<tbody>
+			<tr class="height-40">
+				<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+			</tr>
+			<tr ng-repeat="row in accesorios.table  track by $index" ng-class="{'last-child': $last}">
+				<td ng-repeat="col in row  track by $index"> 
+					<span ng-if="isString(col)">{{col}}</span> 
+					<span  ng-if="!isString(col)">{{col  | number}}</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<br>
+	<br>
+	<div class="item-row">
+		<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura</h2></div>
 	</div>
-	<div class="section">
-		<div class="wrapper-daily">
-			<div class="title-table f-18 height-30">
-					<span class="color-blue">Recargas</span>
-			</div>
-			<span class="wrapper-table">
-				<table class="daily">
-					<tbody>
-						<tr class="height-40">
-							<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-						</tr>
-						<tr ng-repeat="row in recargas.table  track by $index" ng-class="{'last-child': $last}">
-							<td ng-repeat="col in row  track by $index">{{col}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</span>
-			<span class="wrapper-info">
-				<table class="daily">
-					<tbody>
-						<tr class="height-40">
-							<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-						</tr>
-						<tr ng-repeat="row in recargas.table  track by $index">
-							<td ng-repeat="col in row  track by $index">{{col}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</span>
-		</div>
-		
+	<table class="daily">
+		<tbody>
+			<tr class="height-40">
+				<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+			</tr>
+			<tr ng-repeat="row in pagoFactura.table  track by $index" ng-class="{'last-child': $last}">
+					<td ng-repeat="col in row  track by $index"> 
+							<span ng-if="isString(col)">{{col}}</span> 
+							<span  ng-if="!isString(col)">{{col  | number}}</span>
+						</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<br>
+	<br>
+	<div class="item-row">
+		<div class="item-col"><h2 class="color-blue t-left">Recargas</h2></div>
 	</div>
+	<table class="daily">
+		<tbody>
+			<tr class="height-40">
+				<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+			</tr>
+			<tr ng-repeat="row in recargas.table  track by $index" ng-class="{'last-child': $last}">
+					<td ng-repeat="col in row  track by $index"> 
+							<span ng-if="isString(col)">{{col}}</span> 
+							<span  ng-if="!isString(col)">{{col  | number}}</span>
+						</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
-
-<div class="wrapper-chart" ng-class="{chartDisplayAll: chartDisplayAll}">
+<div ng-show="tabs[1].active">
+		<br>
+		<br>
+		<br>
 		<div class="item-row">
-			<div class="item-col"> <i class="icon icon-arrow" ng-click="toggleChart();"></i></div>
+			<div class="item-col"><h2 class="color-blue t-left">Accesos</h2></div>
 		</div>
 		<div class="wrapper-chart-inner">
 				<canvas id="myChart1"></canvas>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="item-row">
+			<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura</h2></div>
+		</div>
+		<div class="wrapper-chart-inner">
+				<canvas id="myChart2"></canvas>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="item-row">
+			<div class="item-col"><h2 class="color-blue t-left">Recargas</h2></div>
+		</div>
+		<div class="wrapper-chart-inner">
+				<canvas id="myChart3"></canvas>
 		</div>
 </div>
