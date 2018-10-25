@@ -423,6 +423,9 @@ table.daily tr td.text-left{
 .wrapper-chart-inner{
     height: 275px;
 }
+.wrapper-chart-inner:hover{
+    /* box-shadow: 0 0 20px rgba(0,0,0,.3); */
+}
 .wrapper-chart.chartDisplayAll .wrapper-chart-inner{
     height: calc(100vh - 250px);
 }
