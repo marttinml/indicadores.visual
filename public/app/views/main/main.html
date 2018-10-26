@@ -1,7 +1,7 @@
 <header>
 	<div class="wrapper">
 		<div class="sub-wrapper">
-			<img src="assets/img/LOGO_AT&T.png" alt="" ng-click="$event.stopPropagation();">
+			<img src="assets/img/LOGO_AT&T.png" alt="">
 			<span class="label-title">
 				<span>Indicadores Autoservicio</span>
 				<span class="color-disable">v0</span>
@@ -17,7 +17,7 @@
 		<li></li>
 	</ul>
 	<div class="tabs">
-		<dib class="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();tabsToggle(tab)">{{tab.title}}</dib>
+		<dib class="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" ng-click="tabsToggle(tab)">{{tab.title}}</dib>
 	</div>
 
 </header>
@@ -25,92 +25,118 @@
 
 
 
-<div ng-show="tabs[0].active">
+<div ng-show="tabs[0].active" class="tables">
 	<br>
 	<br>
-	<br>
-	<div class="item-row">
-		<div class="item-col"><h2 class="color-blue t-left">Accesos</h2></div>
-	</div>
-	<table class="daily">
-		<tbody>
-			<tr class="height-40">
-				<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-			</tr>
-			<tr ng-repeat="row in accesorios.table  track by $index" ng-class="{'last-child': $last}">
-				<td ng-repeat="col in row  track by $index"> 
-					<span ng-if="isString(col)">{{col}}</span> 
-					<span  ng-if="!isString(col)">{{col  | number}}</span>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	<br>
-	<br>
-	<div class="item-row">
-		<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura</h2></div>
-	</div>
-	<table class="daily">
-		<tbody>
-			<tr class="height-40">
-				<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-			</tr>
-			<tr ng-repeat="row in pagoFactura.table  track by $index" ng-class="{'last-child': $last}">
-					<td ng-repeat="col in row  track by $index"> 
-							<span ng-if="isString(col)">{{col}}</span> 
-							<span  ng-if="!isString(col)">{{col  | number}}</span>
-						</td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	<br>
-	<br>
-	<div class="item-row">
-		<div class="item-col"><h2 class="color-blue t-left">Recargas</h2></div>
-	</div>
-	<table class="daily">
-		<tbody>
-			<tr class="height-40">
-				<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-			</tr>
-			<tr ng-repeat="row in recargas.table  track by $index" ng-class="{'last-child': $last}">
-					<td ng-repeat="col in row  track by $index"> 
-							<span ng-if="isString(col)">{{col}}</span> 
-							<span  ng-if="!isString(col)">{{col  | number}}</span>
-						</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-<div ng-show="tabs[1].active">
-		<br>
-		<br>
-		<br>
+	<div class="content">
 		<div class="item-row">
 			<div class="item-col"><h2 class="color-blue t-left">Accesos</h2></div>
 		</div>
-		<div class="wrapper-chart-inner">
-				<canvas id="myChart1"></canvas>
-		</div>
-		<br>
-		<br>
-		<br>
+		<table class="daily">
+			<tbody>
+				<tr class="height-40">
+					<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+				</tr>
+				<tr ng-repeat="row in accesos.table  track by $index" ng-class="{'last-child': $last}">
+					<td ng-repeat="col in row  track by $index"> 
+						<span ng-if="isString(col)">{{col}}</span> 
+						<span  ng-if="!isString(col)">{{col  | number}}</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<br>
+	<div class="content">
 		<div class="item-row">
 			<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura</h2></div>
 		</div>
-		<div class="wrapper-chart-inner">
-				<canvas id="myChart2"></canvas>
-		</div>
-		<br>
-		<br>
-		<br>
+		<table class="daily">
+			<tbody>
+				<tr class="height-40">
+					<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+				</tr>
+				<tr ng-repeat="row in pagoFactura.table  track by $index" ng-class="{'last-child': $last}">
+						<td ng-repeat="col in row  track by $index"> 
+								<span ng-if="isString(col)">{{col}}</span> 
+								<span  ng-if="!isString(col)">{{col  | number}}</span>
+							</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<br>
+	<div class="content">
 		<div class="item-row">
 			<div class="item-col"><h2 class="color-blue t-left">Recargas</h2></div>
 		</div>
-		<div class="wrapper-chart-inner">
-				<canvas id="myChart3"></canvas>
+		<table class="daily">
+			<tbody>
+				<tr class="height-40">
+					<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
+				</tr>
+				<tr ng-repeat="row in recargas.table  track by $index" ng-class="{'last-child': $last}">
+						<td ng-repeat="col in row  track by $index"> 
+								<span ng-if="isString(col)">{{col}}</span> 
+								<span  ng-if="!isString(col)">{{col  | number}}</span>
+							</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div ng-show="tabs[1].active" class="charts">
+		<br>
+		<br>
+		<div class="content">
+			<div class="item-row">
+				<div class="item-col"><h2 class="color-blue t-left">Accesos
+					<i class="icon icon-expand-solid"  ng-click="full(accesos.chart, 'Accesos', 'myChart1', 'myChart1Wrapper')"></i>
+				</h2>
+				</div>
+			</div>
+			<div class="wrapper-chart-inner" id="myChart1Wrapper">
+					<canvas id="myChart1"></canvas>
+			</div>
 		</div>
+		<br>
+		<br>
+		<div class="content">
+		<div class="item-row">
+			<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura 
+				<i class="icon icon-expand-solid"  ng-click="full(pagoFactura.chart, 'Pagos de Factura', 'myChart2', 'myChart2Wrapper')"></i>
+			</h2>
+			</div>
+		</div>
+		<div class="wrapper-chart-inner" id="myChart2Wrapper">
+				<canvas id="myChart2"></canvas>
+		</div>
+		</div>
+		<br>
+		<br>
+		<div class="content">
+			<div class="item-row">
+				<div class="item-col"><h2 class="color-blue t-left">Recargas
+					<i class="icon icon-expand-solid"  ng-click="full(recargas.chart, 'Recargas', 'myChart3', 'myChart3Wrapper')"></i>
+				</h2>
+				</div>
+			</div>
+			<div class="wrapper-chart-inner" id="myChart3Wrapper">
+					<canvas id="myChart3"></canvas>
+			</div>
+		</div>
+</div>
+
+<div class="full-screen" ng-class="{transition: fullScreen}">
+	<div class="item-row">
+		<div class="item-col"><h2 class="color-blue t-left">{{labelChart}}</h2>
+			<i class="icon icon-compress-solid"  ng-click="min()"></i>
+		</div>
+	</div>
+	<div class="wrapper-chart-full-inner" id="xd">
+			<!-- <canvas id="myChart4"></canvas> -->
+	</div>
 </div>

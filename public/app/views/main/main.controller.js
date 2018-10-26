@@ -11,14 +11,14 @@
 
     var _this = this;
 
-    $scope.colors = ['#CAA2DD','#9063CD','#71C5E8','#0568AE','#FFB81C','#EA7400','#009FDB'];
+    $scope.colors = ['#4CA90C','#4CA90C','#71C5E8','#71C5E8','#FFB81C','#FFB81C','#009FDB'];
 
 
     $scope.header = ['Canal','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct'];
-    $http.get("../../../1.json").success(function (data) { $scope.canalAccesorios = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../1.json").success(function (data) { $scope.canalaccesos = data; }).error(function (data) {console.log("there was an error"); });
     $http.get("../../../2.json").success(function (data) { $scope.canalPagoFactura = data; }).error(function (data) {console.log("there was an error"); });
     $http.get("../../../3.json").success(function (data) { $scope.canalRecargas = data; console.log(data); }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../4.json").success(function (data) { $scope.plataformaAccesorios = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../4.json").success(function (data) { $scope.plataformaaccesos = data; }).error(function (data) {console.log("there was an error"); });
     $http.get("../../../5.json").success(function (data) { $scope.plataformaPagoFactura = data; }).error(function (data) {console.log("there was an error"); });
     $http.get("../../../6.json").success(function (data) { $scope.plataformaRecargas = data; }).error(function (data) {console.log("there was an error"); });
 
@@ -32,13 +32,24 @@
   $scope.toggleChart = function(){
     !$scope.chartDisplayAll ? $scope.full() : $scope.min();
   };
-  $scope.full = function(){
-    $scope.chartDisplayAll = true;
-    $scope.preFactory();
+  $scope.fullScreen = false;
+  $scope.labelChart = '';
+  $scope.lastWrapper = '';
+  $scope.lastChart = '';
+  $scope.full = function(obj, label, id, lastWrapper){
+    $scope.labelChart = label;
+    $scope.lastWrapper = lastWrapper;
+    $scope.lastChart = id;
+    $scope.fullScreen = true;
+    // $scope.chartfill = $scope.factoryLine(obj, 'myChart4');
+    var element = document.getElementById(id);
+    angular.element(document.getElementById("xd")).append(element);
   };
   $scope.min = function(){
-    $scope.chartDisplayAll = false;
-    $scope.preFactory();
+    $scope.fullScreen = false;
+    // $scope.chartfill.destroy();
+    var element = document.getElementById($scope.lastChart);
+    angular.element(document.getElementById($scope.lastWrapper)).append(element);
   };
 
     $scope.pageIndex = 0;
@@ -84,7 +95,7 @@
       var chart = [];
       var newChart = [];
       switch($scope.pageIndex){
-        case 0: chart = $scope.accesorios.chart; break;
+        case 0: chart = $scope.accesos.chart; break;
         case 1: chart = $scope.pagoFactura.chart; break;
         case 2: chart = $scope.recargas.chart; break;
       };
@@ -102,10 +113,11 @@
 
     $scope.factoryLine = function(obj, id){
 
+
       var ctx = document.getElementById(id).getContext('2d');
-          Chart.defaults.global.defaultFontSize = 8;
+          Chart.defaults.global.defaultFontSize = 10;
           // $scope.chart && $scope.chart.destroy();
-          $scope.chart = new Chart(ctx, {
+          var myChart = new Chart(ctx, {
           type: 'line',
           data: {
               labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct'],
@@ -113,8 +125,9 @@
           },
           options: {
               responsive: true, 
-              maintainAspectRatio: false, 
+              maintainAspectRatio: false,
               legend: {
+                  // onClick: (e) => e.stopPropagation(),
                   display: true,
                   labels: {
                       boxWidth: 10,
@@ -132,6 +145,7 @@
 
           }
       });
+      return myChart;
   };
 
   $scope.factoryBar = function(obj, id){
@@ -177,8 +191,8 @@
 
     $scope.init = function(){
 
-      $scope.accesorios = { 
-        table: $scope.canalAccesorios,
+      $scope.accesos = { 
+        table: $scope.canalaccesos,
           chart:[] 
       };
   
@@ -193,22 +207,22 @@
 
       $scope.tabs = [
         { title: "Datos por Canal", active: true, jsons: {
-          accesorios: $scope.canalAccesorios,
+          accesos: $scope.canalaccesos,
           pagoFactura: $scope.canalPagoFactura,
           recargas: $scope.canalRecargas
         } },
         { title: "Graficas por Canal", active: false, jsons: {
-          accesorios: $scope.plataformaAccesorios,
+          accesos: $scope.plataformaaccesos,
           pagoFactura: $scope.plataformaPagoFactura,
           recargas: $scope.plataformaRecargas
         }}
       ];
 
-      $scope.parseChart($scope.accesorios);
+      $scope.parseChart($scope.accesos);
       $scope.parseChart($scope.pagoFactura);
       $scope.parseChart($scope.recargas);
 
-      $scope.factoryLine($scope.accesorios.chart, 'myChart1');
+      $scope.factoryLine($scope.accesos.chart, 'myChart1');
       $scope.factoryLine($scope.pagoFactura.chart, 'myChart2');
       $scope.factoryLine($scope.recargas.chart, 'myChart3');
 

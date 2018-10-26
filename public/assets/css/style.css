@@ -394,38 +394,58 @@ table.daily tr td.text-left{
     text-align: left;
 }
 
-.wrapper-chart{
-    height: 50px;
-    padding-top: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 100%;
-    position: fixed;
-    left:0%;
-    right:0%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,.2);
-    bottom: 0;
-    transition: .3s;
-    background-color: rgb(255,255,255);
-}
 .wrapper-chart.chartDisplayAll{
     height: calc(100vh - 167px);
     transition: .3s;
-}
-.wrapper-chart.chartDisplayAll .icon-arrow{
-    transform: rotate(180deg);
-    transition: .3s;
-
 }
 
 .wrapper-chart-inner{
     height: 275px;
 }
-.wrapper-chart-inner:hover{
-    /* box-shadow: 0 0 20px rgba(0,0,0,.3); */
+
+.icon{
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
 }
+.icon-compress-solid{
+    background-image: url(../img/compress-solid.svg);
+}
+.icon-expand-solid{
+    background-image: url(../img/expand-solid.svg);
+}
+.full-screen{
+    background-color: white;
+    position: fixed;
+    z-index: -1;
+    padding: 30px;
+    padding-top: 20px;
+    transition: .3s;
+    opacity: 0;
+    height: 241px;
+    transition: .3s;
+}
+.full-screen.transition{
+    left:0;
+    top:64px;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    opacity: 1;
+    height: auto;
+}
+.wrapper-chart-full-inner{
+    height: calc(100vh - 150px);
+}
+/* .wrapper-chart-inner:hover{
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    cursor: pointer;
+} */
 .wrapper-chart.chartDisplayAll .wrapper-chart-inner{
     height: calc(100vh - 250px);
 }
@@ -733,19 +753,21 @@ ul.grid-two li:last-child {
 .width-50{
     width: 50%;
 }
-.wrapper-charts{
-    border: 1px solid rgb(224,224,224);
-    height: 370px;
+.content{
+    padding: 10px;
+    transition: .2s;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+.charts .content:hover{
+    /* cursor: pointer; */
+    /* box-shadow: 0 0 20px rgba(0,0,0,.5); */
+    transition: .2s;
 }
 .padding-bottom-0{
     padding-bottom: 0px;
 }
 
-i.icon{
-    display: inline-block;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
 i.icon-arrow{
     transition: .3s;
     height: 20px;
@@ -783,11 +805,11 @@ i.icon-arrow:hover{
 }
 @media (max-height: 1200px) {
     .wrapper-chart-inner{
-        height: 240px;
+        height: 201px;
     }
     th, td {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 }
 @media (max-height: 900px) {
