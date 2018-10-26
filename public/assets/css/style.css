@@ -225,6 +225,10 @@ th,td{
     padding-right: 10px;
 }
 
+table tr:hover{
+    background-color: rgba(200,200,200,.1);
+    color: rgba(0,0,0,1)!important;
+}
 
 ul.line li{
     width: 16.66%;
@@ -326,7 +330,6 @@ table.daily tr td{
     /* width: 12%; */
     border-right: none;
     border-left: none;
-    color: rgba(0,0,0,.6);
 }
 table.monthly tr td{
     width: 9.9%;
@@ -423,29 +426,36 @@ table.daily tr td.text-left{
     background-color: white;
     position: fixed;
     z-index: -1;
-    padding: 30px;
-    padding-top: 20px;
+    padding: 10px;
+    margin: 20px;
     transition: .3s;
-    opacity: 0;
-    height: 241px;
+    height: 260px;
+    overflow: hidden;
+    visibility: hidden;
+    right: 0;
+    left:0;
     transition: .3s;
 }
 .full-screen.transition{
-    left:0;
-    top:64px;
+    top:64px!important;
     bottom: 0;
-    right: 0;
-    z-index: 10;
-    opacity: 1;
     height: auto;
+    padding: 30px; 
+    padding-top: 20px;
+    z-index: 10;
+    visibility: visible;
+    margin: 0px;
 }
 .wrapper-chart-full-inner{
-    height: calc(100vh - 150px);
+    height: 201px;
+    transition: .3s;
+    width: 100%;
+    position: relative;
 }
-/* .wrapper-chart-inner:hover{
-    box-shadow: 0 0 20px rgba(0,0,0,.3);
-    cursor: pointer;
-} */
+.transition .wrapper-chart-full-inner{
+    height: calc(100vh - 150px);
+    transition: .3s;
+}
 .wrapper-chart.chartDisplayAll .wrapper-chart-inner{
     height: calc(100vh - 250px);
 }

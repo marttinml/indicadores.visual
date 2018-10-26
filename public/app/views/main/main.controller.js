@@ -37,19 +37,29 @@
   $scope.lastWrapper = '';
   $scope.lastChart = '';
   $scope.full = function(obj, label, id, lastWrapper){
-    $scope.labelChart = label;
-    $scope.lastWrapper = lastWrapper;
-    $scope.lastChart = id;
-    $scope.fullScreen = true;
-    // $scope.chartfill = $scope.factoryLine(obj, 'myChart4');
     var element = document.getElementById(id);
-    angular.element(document.getElementById("xd")).append(element);
+    var xd = document.getElementById('xd');
+    var wrapper = document.getElementById('wrapper');
+    wrapper.style.top = (element.offsetTop - 70) + 'px';
+    setTimeout(function(){
+      $scope.labelChart = label;
+      $scope.lastWrapper = lastWrapper;
+      $scope.lastChart = id;
+      $scope.fullScreen = true;
+      wrapper.style.visibility = 'visible';
+      angular.element(xd).append(element);
+      $scope.$apply();
+    },50);
   };
   $scope.min = function(){
     $scope.fullScreen = false;
     // $scope.chartfill.destroy();
     var element = document.getElementById($scope.lastChart);
-    angular.element(document.getElementById($scope.lastWrapper)).append(element);
+
+    setTimeout(function(){
+      wrapper.style.visibility = 'hidden';
+      angular.element(document.getElementById($scope.lastWrapper)).append(element);
+    },300);
   };
 
     $scope.pageIndex = 0;
