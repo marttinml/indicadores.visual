@@ -3,7 +3,7 @@
 		<div class="sub-wrapper">
 			<img src="assets/img/LOGO_AT&T.png" alt="">
 			<span class="label-title">
-				<span>Indicadores Autoservicio</span>
+				<span>Indicadores Visual</span>
 				<span class="color-disable">v0</span>
 			</span>
 		</div>
@@ -16,86 +16,19 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<div class="tabs">
-		<dib class="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" ng-click="tabsToggle(tab)">{{tab.title}}</dib>
-	</div>
-
 </header>
 
-
-
-
-<div ng-show="tabs[0].active" class="tables">
-	<br>
-	<br>
-	<div class="content">
-		<div class="item-row">
-			<div class="item-col"><h2 class="color-blue t-left">Accesos</h2></div>
-		</div>
-		<table class="daily">
-			<tbody>
-				<tr class="height-40">
-					<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-				</tr>
-				<tr ng-repeat="row in accesos.table  track by $index" ng-class="{'last-child': $last}">
-					<td ng-repeat="col in row  track by $index"> 
-						<span ng-if="isString(col)">{{col}}</span> 
-						<span  ng-if="!isString(col)">{{col  | number}}</span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<br>
-	<br>
-	<div class="content">
-		<div class="item-row">
-			<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura</h2></div>
-		</div>
-		<table class="daily">
-			<tbody>
-				<tr class="height-40">
-					<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-				</tr>
-				<tr ng-repeat="row in pagoFactura.table  track by $index" ng-class="{'last-child': $last}">
-						<td ng-repeat="col in row  track by $index"> 
-								<span ng-if="isString(col)">{{col}}</span> 
-								<span  ng-if="!isString(col)">{{col  | number}}</span>
-							</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<br>
-	<br>
-	<div class="content">
-		<div class="item-row">
-			<div class="item-col"><h2 class="color-blue t-left">Recargas</h2></div>
-		</div>
-		<table class="daily">
-			<tbody>
-				<tr class="height-40">
-					<td class="line-bottom-2" ng-repeat="row in header  track by $index">{{row}}</td>
-				</tr>
-				<tr ng-repeat="row in recargas.table  track by $index" ng-class="{'last-child': $last}">
-						<td ng-repeat="col in row  track by $index"> 
-								<span ng-if="isString(col)">{{col}}</span> 
-								<span  ng-if="!isString(col)">{{col  | number}}</span>
-							</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-
-<div ng-show="tabs[1].active" class="charts">
+<div class="charts">
 		<br>
 		<br>
 		<div class="content">
 			<div class="item-row">
-				<div class="item-col"><h2 class="color-blue t-left">Accesos
-					<i class="icon icon-expand-solid"  ng-click="full(accesos.chart, 'Accesos', 'myChart1', 'myChart1Wrapper')"></i>
+				<div class="item-col"><h2 class="color-blue t-left">
+					<img class="icon-card" src="assets/img/icon.01.svg" alt="">
+					<span class="c-black">Sesiones Visuales</span>
+					<i class="icon icon-expand-solid"  ng-click="full(accesos.chart, 'Sesiones Visuales', 'myChart1', 'myChart1Wrapper', '01')"></i>
 				</h2>
+				<hr>
 				</div>
 			</div>
 			<div class="wrapper-chart-inner" id="myChart1Wrapper">
@@ -106,9 +39,12 @@
 		<br>
 		<div class="content">
 		<div class="item-row">
-			<div class="item-col"><h2 class="color-blue t-left">Pagos de Factura 
-				<i class="icon icon-expand-solid"  ng-click="full(pagoFactura.chart, 'Pagos de Factura', 'myChart2', 'myChart2Wrapper')"></i>
+			<div class="item-col"><h2 class="color-blue t-left">
+					<img class="icon-card" src="assets/img/icon.02.svg" alt="">
+					<span class="c-black">Ingresos por pagos</span>
+				<i class="icon icon-expand-solid"  ng-click="full(pagoFactura.chart, 'Ingresos por pagos', 'myChart2', 'myChart2Wrapper', '02')"></i>
 			</h2>
+			<hr>
 			</div>
 		</div>
 		<div class="wrapper-chart-inner" id="myChart2Wrapper">
@@ -119,25 +55,49 @@
 		<br>
 		<div class="content">
 			<div class="item-row">
-				<div class="item-col"><h2 class="color-blue t-left">Recargas
-					<i class="icon icon-expand-solid"  ng-click="full(recargas.chart, 'Recargas', 'myChart3', 'myChart3Wrapper')"></i>
+				<div class="item-col"><h2 class="color-blue t-left">
+						<img class="icon-card" src="assets/img/icon.03.svg" alt="">
+						<span class="c-black">Ingresos por regcarga</span>
+					<i class="icon icon-expand-solid"  ng-click="full(recargas.chart, 'Ingresos por regcarga', 'myChart3', 'myChart3Wrapper', '03')"></i>
 				</h2>
+				<hr>
 				</div>
 			</div>
 			<div class="wrapper-chart-inner" id="myChart3Wrapper">
 					<canvas id="myChart3"></canvas>
 			</div>
 		</div>
+		<br>
+		<br>
+		<div class="content">
+			<div class="item-row">
+				<div class="item-col"><h2 class="color-blue t-left">
+						<img class="icon-card" src="assets/img/icon.04.svg" alt="">
+						<span class="c-black">Acomulado Mensual</span>
+				</h2>
+				<hr>
+			</div>
+			</div>
+			<div class="">
+				<ul class="margin-top-20">
+					<li><b class="num-custom" >480</b><span>Consultas beneficios pospago</span></li>
+					<li><b class="num-custom" >569</b><span>Consultas beneficios prepago</span></li>
+					<li><b class="num-custom" >169</b><span>Consultas detalle de plan pospago</span></li>
+					<li><b class="num-custom" >237</b><span>Consultas detalle de plan prepago</span></li>
+				</ul>
+		</div>
 </div>
 
 <div class="full-screen" ng-class="{transition: fullScreen}" id="wrapper">
 	<div class="item-row">
-		<div class="item-col"><h2 class="color-blue t-left">{{labelChart}}
+		<div class="item-col"><h2 class="color-blue t-left">
+				<img class="icon-card" src="assets/img/icon.{{icon}}.svg" alt="">
+				<span class="c-black">{{labelChart}}</span>
+
 			<i class="icon icon-compress-solid"  ng-click="min()"></i>
 		</h2>
 		</div>
 	</div>
 	<div class="wrapper-chart-full-inner" id="xd">
-			<!-- <canvas id="myChart4"></canvas> -->
 	</div>
 </div>

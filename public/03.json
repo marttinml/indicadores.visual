@@ -1,0 +1,47 @@
+[
+  {
+    "periodo" : "nov.22",
+    "monto" : "$420.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.08",
+    "monto" : "$720.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.07",
+    "monto" : "$230.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.06",
+    "monto" : "$180.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.05",
+    "monto" : "$1,410.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.04",
+    "monto" : "$2,420.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.03",
+    "monto" : "$1,860.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.02",
+    "monto" : "$1,380.00",
+    "flujo" : "c. ingresos por recargas"
+  },
+  {
+    "periodo" : "nov.01",
+    "monto" : "$1,110.00",
+    "flujo" : "c. ingresos por recargas"
+  }
+]
