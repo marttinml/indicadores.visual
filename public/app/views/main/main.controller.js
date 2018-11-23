@@ -109,6 +109,7 @@
 
     $scope.parseToChart = function(data){
       var obj = { labels:[], data: [] };
+      data.reverse();
 
       for(var i in data){
         var item = data[i];
