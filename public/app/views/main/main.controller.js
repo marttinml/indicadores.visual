@@ -66,7 +66,7 @@
                   fill: false,
                   label: "IVR Visual",
                   backgroundColor: '#009FDB',
-                  pointRadius: 4,
+                  pointRadius: 2,
                   pointBorderWidth: 2,
                   borderWidth: 1,
                   borderColor: '#009FDB',
