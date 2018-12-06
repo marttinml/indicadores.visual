@@ -763,6 +763,10 @@ ul.grid-two li:last-child {
     box-shadow: 0 2px 2px rgba(0,0,0,.1);
     background-color: rgb(255,255,255);
 }
+.charts{
+    max-width: 1024px;
+    margin: auto;
+}
 .charts .content:hover{
     /* cursor: pointer; */
     /* box-shadow: 0 0 20px rgba(0,0,0,.5); */
@@ -833,10 +837,10 @@ hr{
     padding: 5px;
 }
 .card-top{
-    height: 36px;
+    height: 40px;
     font-weight: bold;
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 2.1;
     background-color: #009FDB;
     font-family: PoppinsBold;
 }
@@ -875,6 +879,14 @@ hr{
 }
 .display-table-cell{
     display: table-cell;
+    vertical-align: middle;
+}
+
+.ico-pincel{
+    background-image: url(../img/pincel.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60px;
 }
 @media (max-width: 1200px) {
     b.color-disable{
