@@ -1,142 +1,167 @@
 [
   {
-    "periodo" : "nov.29",
+    "periodo" : "12.05",
+    "monto" : "$49,861.54",
+    "flujo" : "b. ingresos por pago de factura"
+  },
+  {
+    "periodo" : "12.04",
+    "monto" : "$46,426.11",
+    "flujo" : "b. ingresos por pago de factura"
+  },
+  {
+    "periodo" : "12.03",
+    "monto" : "$61,708.42",
+    "flujo" : "b. ingresos por pago de factura"
+  },
+  {
+    "periodo" : "12.02",
+    "monto" : "$23,563.49",
+    "flujo" : "b. ingresos por pago de factura"
+  },
+  {
+    "periodo" : "12.01",
+    "monto" : "$58,852.64",
+    "flujo" : "b. ingresos por pago de factura"
+  },
+  {
+    "periodo" : "11.30",
+    "monto" : "$57,536.85",
+    "flujo" : "b. ingresos por pago de factura"
+  },
+  {
+    "periodo" : "11.29",
     "monto" : "$26,830.26",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.28",
+    "periodo" : "11.28",
     "monto" : "$19,303.31",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.27",
+    "periodo" : "11.27",
     "monto" : "$24,886.54",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.26",
+    "periodo" : "11.26",
     "monto" : "$41,941.24",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.25",
+    "periodo" : "11.25",
     "monto" : "$25,832.89",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.24",
+    "periodo" : "11.24",
     "monto" : "$37,553.45",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.23",
+    "periodo" : "11.23",
     "monto" : "$30,890.64",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.22",
+    "periodo" : "11.22",
     "monto" : "$22,881.07",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.21",
+    "periodo" : "11.21",
     "monto" : "$69,014.57",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.20",
+    "periodo" : "11.20",
     "monto" : "$30,267.48",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.19",
+    "periodo" : "11.19",
     "monto" : "$31,753.33",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.18",
+    "periodo" : "11.18",
     "monto" : "$17,344.30",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.17",
+    "periodo" : "11.17",
     "monto" : "$39,432.24",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.16",
+    "periodo" : "11.16",
     "monto" : "$60,721.75",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.15",
+    "periodo" : "11.15",
     "monto" : "$105,891.69",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.14",
+    "periodo" : "11.14",
     "monto" : "$63,345.94",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.13",
+    "periodo" : "11.13",
     "monto" : "$46,695.30",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.12",
+    "periodo" : "11.12",
     "monto" : "$60,953.66",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.11",
+    "periodo" : "11.11",
     "monto" : "$17,504.09",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.10",
+    "periodo" : "11.10",
     "monto" : "$20,450.70",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.09",
+    "periodo" : "11.09",
     "monto" : "$37,072.24",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.08",
+    "periodo" : "11.08",
     "monto" : "$12,537.97",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.07",
+    "periodo" : "11.07",
     "monto" : "$10,473.46",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.05",
+    "periodo" : "11.05",
     "monto" : "$18,410.45",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.04",
+    "periodo" : "11.04",
     "monto" : "$15,059.04",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.03",
+    "periodo" : "11.03",
     "monto" : "$17,267.39",
     "flujo" : "b. ingresos por pago de factura"
   },
   {
-    "periodo" : "nov.02",
+    "periodo" : "11.02",
     "monto" : "$14,627.84",
-    "flujo" : "b. ingresos por pago de factura"
-  },
-  {
-    "periodo" : "nov.01",
-    "monto" : "$16,613.48",
     "flujo" : "b. ingresos por pago de factura"
   }
 ]

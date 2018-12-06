@@ -1,147 +1,172 @@
 [
   {
-    "periodo" : "nov.29",
-    "cantidad" : "3,325",
+    "periodo" : "12.05",
+    "cantidad" : "2,839",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.28",
+    "periodo" : "12.04",
+    "cantidad" : "3,529",
+    "flujo" : "a. sesiones visuales"
+  },
+  {
+    "periodo" : "12.03",
+    "cantidad" : "3,922",
+    "flujo" : "a. sesiones visuales"
+  },
+  {
+    "periodo" : "12.02",
+    "cantidad" : "2,634",
+    "flujo" : "a. sesiones visuales"
+  },
+  {
+    "periodo" : "12.01",
+    "cantidad" : "3,190",
+    "flujo" : "a. sesiones visuales"
+  },
+  {
+    "periodo" : "11.30",
+    "cantidad" : "3,709",
+    "flujo" : "a. sesiones visuales"
+  },
+  {
+    "periodo" : "11.29",
+    "cantidad" : "3,326",
+    "flujo" : "a. sesiones visuales"
+  },
+  {
+    "periodo" : "11.28",
     "cantidad" : "3,086",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.27",
+    "periodo" : "11.27",
     "cantidad" : "3,191",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.26",
+    "periodo" : "11.26",
     "cantidad" : "3,955",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.25",
+    "periodo" : "11.25",
     "cantidad" : "2,813",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.24",
+    "periodo" : "11.24",
     "cantidad" : "4,317",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.23",
+    "periodo" : "11.23",
     "cantidad" : "3,590",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.22",
+    "periodo" : "11.22",
     "cantidad" : "3,277",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.21",
+    "periodo" : "11.21",
     "cantidad" : "3,839",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.20",
+    "periodo" : "11.20",
     "cantidad" : "3,711",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.19",
+    "periodo" : "11.19",
     "cantidad" : "3,166",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.18",
+    "periodo" : "11.18",
     "cantidad" : "3,102",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.17",
+    "periodo" : "11.17",
     "cantidad" : "3,563",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.16",
+    "periodo" : "11.16",
     "cantidad" : "4,040",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.15",
+    "periodo" : "11.15",
     "cantidad" : "4,740",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.14",
+    "periodo" : "11.14",
     "cantidad" : "4,436",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.13",
+    "periodo" : "11.13",
     "cantidad" : "3,507",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.12",
+    "periodo" : "11.12",
     "cantidad" : "4,109",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.11",
+    "periodo" : "11.11",
     "cantidad" : "2,710",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.10",
+    "periodo" : "11.10",
     "cantidad" : "2,944",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.09",
+    "periodo" : "11.09",
     "cantidad" : "3,360",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.08",
+    "periodo" : "11.08",
     "cantidad" : "3,008",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.07",
+    "periodo" : "11.07",
     "cantidad" : "3,085",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.06",
+    "periodo" : "11.06",
     "cantidad" : "2,492",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.05",
+    "periodo" : "11.05",
     "cantidad" : "2,480",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.04",
+    "periodo" : "11.04",
     "cantidad" : "1,952",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.03",
+    "periodo" : "11.03",
     "cantidad" : "2,243",
     "flujo" : "a. sesiones visuales"
   },
   {
-    "periodo" : "nov.02",
+    "periodo" : "11.02",
     "cantidad" : "2,221",
-    "flujo" : "a. sesiones visuales"
-  },
-  {
-    "periodo" : "nov.01",
-    "cantidad" : "2,401",
     "flujo" : "a. sesiones visuales"
   }
 ]
