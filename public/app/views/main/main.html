@@ -41,7 +41,7 @@
 		<div class="item-row">
 			<div class="item-col"><h2 class="color-blue t-left">
 					<img class="icon-card" src="assets/img/icon.02.svg" alt="">
-					<span class="c-black">Ingresos por pagos</span>
+					<span class="c-black">Ingresos por Pagos</span>
 				<i class="icon icon-expand-solid"  ng-click="full(pagoFactura.chart, 'Ingresos por pagos', 'myChart2', 'myChart2Wrapper', '02')"></i>
 			</h2>
 			<hr>
@@ -57,7 +57,7 @@
 			<div class="item-row">
 				<div class="item-col"><h2 class="color-blue t-left">
 						<img class="icon-card" src="assets/img/icon.03.svg" alt="">
-						<span class="c-black">Ingresos por recarga</span>
+						<span class="c-black">Ingresos por Recarga</span>
 					<i class="icon icon-expand-solid"  ng-click="full(recargas.chart, 'Ingresos por regcarga', 'myChart3', 'myChart3Wrapper', '03')"></i>
 				</h2>
 				<hr>
@@ -73,7 +73,7 @@
 			<div class="item-row">
 				<div class="item-col"><h2 class="color-blue t-left">
 						<img class="icon-card" src="assets/img/icon.04.svg" alt="">
-						<span class="c-black">Acomulado Mensual</span>
+						<span class="c-black">Acumulado Mensual</span>
 					</h2>
 					<hr>
 				</div>
@@ -82,73 +82,73 @@
 				<div class="card-row">
 					<div class="card-col width-100p blue-dark">
 						<div class="card-top">{{acom6[0].cantidad}}</div>
-						<div class="card-bottom"><span>Sesiones Visuales</span></div>
+						<div class="card-bottom"><span>{{acom6[0].flujo}}</span></div>
 					</div>
 				</div>
 
 				<div class="card-row">
 					<div class="card-col">
 						<div class="card-top">{{acom6[1].cantidad}}</div>
-						<div class="card-bottom"><span>Consulta Beneficios Prepago</span></div>
+						<div class="card-bottom"><span>{{acom6[1].flujo}}</span></div>
 					</div>
 					<div class="card-col">
 							<div class="card-top">{{acom6[2].cantidad}}</div>
-							<div class="card-bottom"><span>Consulta Beneficios Pospago</span></div>
+							<div class="card-bottom"><span>{{acom6[2].flujo}}</span></div>
 					</div>
 				</div>
 
 				<div class="card-row">
 						<div class="card-col">
 							<div class="card-top">{{acom6[3].cantidad}}</div>
-							<div class="card-bottom"><span>Pagos de Factura</span></div>
+							<div class="card-bottom"><span>{{acom6[3].flujo}}</span></div>
 						</div>
 						<div class="card-col">
 							<div class="card-top">{{acom6[4].cantidad}}</div>
-							<div class="card-bottom"><span>Recargas</span></div>
+							<div class="card-bottom"><span>{{acom6[4].flujo}}</span></div>
 						</div>
 				</div>
 
 				<div class="card-row">
 					<div class="card-col green">
 						<div class="card-top">{{ingresos4[0].monto}}</div>
-						<div class="card-bottom"><span>Ingresos por pagos de factura</span></div>
+						<div class="card-bottom"><span>{{ingresos4[0].flujo}}</span></div>
 					</div>
 					<div class="card-col green">
 						<div class="card-top">{{ingresos5[0].monto}}</div>
-						<div class="card-bottom"><span>Ingresos por Recargas</span></div>
+						<div class="card-bottom"><span>{{ingresos5[0].flujo}}</span></div>
 					</div>
 				</div>
 
 				<div class="card-row">
 					<div class="card-col">
 						<div class="card-top">{{acom6[5].cantidad}}</div>
-						<div class="card-bottom"><span>Detalle de Plan</span></div>
+						<div class="card-bottom"><span>{{acom6[5].flujo}}</span></div>
 					</div>
 					<div class="card-col">
 						<div class="card-top">{{acom6[6].cantidad}}</div>
-						<div class="card-bottom"><span>Paquetes Comprados</span></div>
+						<div class="card-bottom"><span>{{acom6[6].flujo}}</span></div>
 					</div>
 				</div>
 
 				<div class="card-row">
 					<div class="card-col">
 						<div class="card-top">{{acom6[7].cantidad}}</div>
-						<div class="card-bottom"><span>Suspenciones</span></div>
+						<div class="card-bottom"><span>{{acom6[7].flujo}}</span></div>
 					</div>
 					<div class="card-col">
 						<div class="card-top">{{acom6[8].cantidad}}</div>
-						<div class="card-bottom"><span>Reactivaciones</span></div>
+						<div class="card-bottom"><span>{{acom6[8].flujo}}</span></div>
 					</div>
 				</div>
 
 				<div class="card-row">
 					<div class="card-col">
 						<div class="card-top">{{acom6[9].cantidad}}</div>
-						<div class="card-bottom"><span>Consultas al Centro Ayuda</span></div>
+						<div class="card-bottom"><span>{{acom6[9].flujo}}</span></div>
 					</div>
 					<div class="card-col">
 						<div class="card-top">{{acom6[10].cantidad}}</div>
-						<div class="card-bottom"><span>Encuestas Respondidas</span></div>
+						<div class="card-bottom"><span>{{acom6[10].flujo}}</span></div>
 					</div>
 				</div>
 
@@ -169,11 +169,11 @@
 							</div>
 						</div>
 				<ul class="margin-top-20">
-					<li><span class="num-custom" >{{j07[0].cantidad}}</span><span>Considera el proceso fácil</span></li>
-					<li><span class="num-custom" >{{j07[1].cantidad}}</span><span>Considera el proceso dificil</span></li>
+					<li><span class="num-custom" >{{j07[0].cantidad}}</span><span>{{j07[0].pregunta}}</span></li>
+					<li><span class="num-custom" >{{j07[1].cantidad}}</span><span>{{j07[1].pregunta}}</span></li>
 					<br>
-					<li><span class="num-custom" >{{j08[0].cantidad}}</span><span>Resolvio su problema</span></li>
-					<li><span class="num-custom" >{{j08[1].cantidad}}</span><span>Contactó a un ejecutivo</span></li>
+					<li><span class="num-custom" >{{j08[0].cantidad}}</span><span>{{j08[0].pregunta}}</span></li>
+					<li><span class="num-custom" >{{j08[1].cantidad}}</span><span>{{j08[1].pregunta}}</span></li>
 					<br>
 					<li class="display-table"><div class="num-custom-big display-table-cell ico-pincel" >{{j09[0].cantidad}}</div><div class="display-table-cell">Calificación promedio de servicios AT&T en una escala de 10</div></li>
 				</ul>

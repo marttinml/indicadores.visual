@@ -10,16 +10,16 @@
   function MainController($state, $scope, $http){
 
     $scope.header = ['Canal','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct'];
-    $http.get("../../../01.json").success(function (data) { $scope.accesos = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../02.json").success(function (data) { $scope.pagoFactura = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../03.json").success(function (data) { $scope.recargas = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../06.json").success(function (data) { $scope.acom6 = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../04.json").success(function (data) { $scope.ingresos4 = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../05.json").success(function (data) { $scope.ingresos5 = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/01.json").success(function (data) { $scope.accesos = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/02.json").success(function (data) { $scope.pagoFactura = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/03.json").success(function (data) { $scope.recargas = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/06.json").success(function (data) { $scope.acom6 = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/04.json").success(function (data) { $scope.ingresos4 = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/05.json").success(function (data) { $scope.ingresos5 = data; }).error(function (data) {console.log("there was an error"); });
 
-    $http.get("../../../07.json").success(function (data) { $scope.j07 = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../08.json").success(function (data) { $scope.j08 = data; }).error(function (data) {console.log("there was an error"); });
-    $http.get("../../../09.json").success(function (data) { $scope.j09 = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/07.json").success(function (data) { $scope.j07 = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/08.json").success(function (data) { $scope.j08 = data; }).error(function (data) {console.log("there was an error"); });
+    $http.get("../../../jsons/09.json").success(function (data) { $scope.j09 = data; }).error(function (data) {console.log("there was an error"); });
 
 
   $scope.isString = function(val){
