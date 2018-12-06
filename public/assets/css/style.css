@@ -107,7 +107,7 @@ h1{
     font-size: 24px;
 }
 h2{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 100;
 }
 
@@ -804,6 +804,13 @@ hr{
 
 .num-custom{
     width: 70px;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.num-custom-big{
+    width: 70px;
     font-size: 24px;
     display: inline-block;
     vertical-align: middle;
@@ -814,15 +821,61 @@ hr{
 }
 
 .card-row{
+    height: 72px;
     display: table;
+    width: 100%;
 }
 .card-col{
     display: table-cell;
     width: 50%;
+    color: rgb(255,255,255);
+    text-align: center;
+    padding: 5px;
 }
-/* .card-row{
-    
-} */
+.card-top{
+    height: 36px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.6;
+    background-color: #009FDB;
+    font-family: PoppinsBold;
+}
+.card-bottom{
+    height: 36px;
+    background-color: rgba(0,142,208);
+    font-size: 12px;
+    display: table;
+    width: 100%;
+    padding: 5px;
+}
+.card-bottom span{
+    display: table-cell;
+    vertical-align: middle;
+}
+.blue-dark .card-top{
+    background-color: #0F54AF;
+}
+
+.blue-dark .card-bottom{
+    background-color: rgb(10,67, 158);
+}
+
+.green .card-top{
+    background-color: rgb(76,169,12);
+}
+.green .card-bottom{
+    background-color: rgb(65,151,11);
+}
+
+.width-100p{
+    width: 100%;
+}
+.display-table{
+    display: table;
+}
+.display-table-cell{
+    display: table-cell;
+}
 @media (max-width: 1200px) {
     b.color-disable{
         display: none;

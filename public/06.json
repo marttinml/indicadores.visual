@@ -1,0 +1,46 @@
+[
+  {
+    "cantidad" : "112,094",
+    "flujo" : "6.01 sesiones visuales"
+  },
+  {
+    "cantidad" : "17,018",
+    "flujo" : "6.02 consultas de beneficios prepago"
+  },
+  {
+    "cantidad" : "6,308",
+    "flujo" : "6.03 consultas de beneficios pospago"
+  },
+  {
+    "cantidad" : "1,749",
+    "flujo" : "6.04 pagos de factura"
+  },
+  {
+    "cantidad" : "793",
+    "flujo" : "6.05 recargas"
+  },
+  {
+    "cantidad" : "13,470",
+    "flujo" : "6.06 detalle de plan"
+  },
+  {
+    "cantidad" : "10,202",
+    "flujo" : "6.07 addons comprados"
+  },
+  {
+    "cantidad" : "84",
+    "flujo" : "6.08 suspensiones"
+  },
+  {
+    "cantidad" : "57",
+    "flujo" : "6.09 reactivaciones"
+  },
+  {
+    "cantidad" : "16,735",
+    "flujo" : "6.10 consultas a centro de ayuda"
+  },
+  {
+    "cantidad" : "22,075",
+    "flujo" : "6.11 encuestas respondidas"
+  }
+]
