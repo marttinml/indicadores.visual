@@ -25,8 +25,8 @@
 			<div class="item-row">
 				<div class="item-col"><h2 class="color-blue t-left">
 					<img class="icon-card" src="assets/img/icon.01.svg" alt="">
-					<span class="c-black">Sesiones Visuales</span>
-					<i class="icon icon-expand-solid"  ng-click="full(accesos.chart, 'Sesiones Visuales', 'myChart1', 'myChart1Wrapper', '01')"></i>
+					<span class="c-black">{{accesos[0].flujo}}</span>
+					<i class="icon icon-expand-solid"  ng-click="full(accesos.chart, accesos[0].flujo, 'myChart1', 'myChart1Wrapper', '01')"></i>
 				</h2>
 				<hr>
 				</div>
@@ -41,8 +41,8 @@
 		<div class="item-row">
 			<div class="item-col"><h2 class="color-blue t-left">
 					<img class="icon-card" src="assets/img/icon.02.svg" alt="">
-					<span class="c-black">Ingresos por Pagos</span>
-				<i class="icon icon-expand-solid"  ng-click="full(pagoFactura.chart, 'Ingresos por pagos', 'myChart2', 'myChart2Wrapper', '02')"></i>
+					<span class="c-black">{{pagoFactura[0].flujo}}</span>
+				<i class="icon icon-expand-solid"  ng-click="full(pagoFactura.chart, pagoFactura[0].flujo, 'myChart2', 'myChart2Wrapper', '02')"></i>
 			</h2>
 			<hr>
 			</div>
@@ -57,8 +57,8 @@
 			<div class="item-row">
 				<div class="item-col"><h2 class="color-blue t-left">
 						<img class="icon-card" src="assets/img/icon.03.svg" alt="">
-						<span class="c-black">Ingresos por Recarga</span>
-					<i class="icon icon-expand-solid"  ng-click="full(recargas.chart, 'Ingresos por regcarga', 'myChart3', 'myChart3Wrapper', '03')"></i>
+						<span class="c-black">{{recargas[0].flujo}}</span>
+					<i class="icon icon-expand-solid"  ng-click="full(recargas.chart, recargas[0].flujo, 'myChart3', 'myChart3Wrapper', '03')"></i>
 				</h2>
 				<hr>
 				</div>
